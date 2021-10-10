@@ -1,0 +1,81 @@
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /*main axis*/
+    align-items: flex-start; /*cross axis*/
+}
+
+header {
+    width: 90%;
+    margin: 0;
+    padding: 1em 5%;
+    flex: initial; /*flex: 0 1 auto*/
+}
+
+canvas {
+    width: 90%;
+    margin: 0;
+    padding: 1em 5%;
+    background:  #FAFAFA; /*gray 50*/
+    flex: initial; /*flex: 0 1 auto*/
+}
+
+footer {
+    width: 90%;
+    margin: 0;
+    padding: 1em 5%;
+    flex: initial; /*flex: 0 1 auto*/
+}
+
+/*Fonts*/
+h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+@media all and (min-width: 300px) {
+    p {
+        font-size: .875em;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+}
+
+@media all and (min-width: 400px) {
+    p {
+        font-size: .9375em;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+}
+
+@media all and (min-width: 600px) {
+    p {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+}
+
+@media all and (min-width: 900px) {
+    h1 {
+        font-size: 1.8em;
+    }
+}
