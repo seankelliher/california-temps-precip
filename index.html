@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+
+        <title>Sean Kelliher - How Dry is the West Becoming?</title>
+
+        <meta name="description" content="Add description for production model">
+        <meta name="robots" content="noindex">
+        
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <header>
+                <h1>How Dry is the West Becoming?</h1>
+            </header>
+
+            <canvas id="precipChart"></canvas>
+
+            <footer>
+                <p>Add footer notes here, if needed.</p>
+            </footer>
+
+        </div> <!--close container class-->
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+
+        <!--Renders contents on index.js on page.-->
+        <script type="text/javascript">
+            var precipChart = new Chart(
+                document.getElementById("precipChart"),
+                config
+            );
+        </script>
+
+    </body>
+
+</html>
