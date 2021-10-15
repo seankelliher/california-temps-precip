@@ -1,7 +1,7 @@
-[![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/precip-temps-american-west?style=flat-square)](/LICENSE.txt)
-## Percipitation in Western USA
+[![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/california-temps-precip?style=flat-square)](/LICENSE.txt)
+## California Temperatures & Precipitation
 
-Chart that displays yearly precipitation totals in the Western United States, 1900 - 2020. The West are the states California, Colorado, Idaho, Montana, Nevada, Oregon, Utah, Washington, and Wyoming. This chart is built with Chart.js 3.5.1.
+Charts that display information on precipitation and temperatures in California cities, 1970 - 2020. The cities are San Diego, Los Angelos, Bakersfield, Fresno, Graton, Stockton, and Eureka. These sites were chosen because they had complete data, and represent different regions of California. The charts were built with Chart.js 3.5.1. The data is from the National Centers for Environmental Information, part of the National Oceanic and Atmospheric Administration (NOAA).
 
 ## Project Status
 
