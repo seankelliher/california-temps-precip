@@ -1,0 +1,277 @@
+--------------------------------------
+--------------------------------------
+WEATHER STATIONS IN CALIFORNIA - 06
+--------------------------------------
+--------------------------------------
+
+
+--------------------------------------
+SAN DIEGO
+--------------------------------------
+
+NAME:
+SAN DIEGO INTERNATIONAL AIRPORT, CA US
+
+ID:
+GHCND:USW00023188
+
+LAT/LON:
+32.733574, -117.183094
+
+START/END:
+1939-01-01 to 2021-01-01
+
+COVERAGE:
+100%
+
+NOTES:
+All data present.
+
+--------------------------------------
+LOS ANGELOS
+--------------------------------------
+
+NAME:
+LOS ANGELES INTERNATIONAL AIRPORT, CA US
+
+ID:
+GHCND:USW00023174
+
+LAT/LON:
+33.937948, -118.388844
+
+START/END:
+1944-01-01 to 2021-01-01
+
+COVERAGE:
+100%
+
+NOTES:
+All data present.
+
+--------------------------------------
+BAKERSFIELD
+--------------------------------------
+
+NAME:
+BAKERSFIELD AIRPORT, CA US
+
+ID:
+GHCND:USW00023155
+
+LAT/LON:
+35.434379, -119.054031
+
+START/END:
+1938-01-01 to 2021-01-01
+
+COVERAGE:
+100%
+
+NOTES:
+All data present.
+
+--------------------------------------
+FRESNO
+--------------------------------------
+
+NAME:
+FRESNO YOSEMITE INTERNATIONAL, CA US
+
+ID:
+GHCND:USW00093193
+
+LAT/LON:
+36.779867, -119.719391
+
+START/END:
+1948-01-01 to 2021-01-01
+
+COVERAGE:
+100%
+
+NOTES:
+All data present.
+
+--------------------------------------
+GRATON (halfway between San Jose and coast)
+--------------------------------------
+
+NAME:
+GRATON, CA US
+
+ID:
+GHCND:USC00043578
+
+LAT/LON:
+38.430530, -122.864742
+
+START/END:
+1926-01-01 to 2021-01-01
+
+COVERAGE:
+94%
+
+NOTES:
+All data present.
+
+--------------------------------------
+STOCKTON
+--------------------------------------
+
+NAME:
+STOCKTON AIRPORT, CA US
+
+ID:
+GHCND:USW00023237
+
+LAT/LON:
+37.888944, -121.225891
+
+START/END:
+1948-01-01 to 2021-01-01
+
+COVERAGE:
+96%
+
+NOTES:
+All data present.
+
+--------------------------------------
+EUREKA
+--------------------------------------
+
+NAME:
+EUREKA WEATHER FORECAST OFFICE WOODLEY ISLAND, CA US
+
+ID:
+GHCND:USW00024213
+
+LAT/LON:
+40.809652, -124.160614
+
+START/END:
+1942-01-01 to 2021-01-01
+
+COVERAGE:
+99%
+
+NOTES:
+All data present.
+
+--------------------------------------
+--------------------------------------
+NOT WORKABLE - MISSING DATA
+--------------------------------------
+--------------------------------------
+
+--------------------------------------
+SAN JOSE
+--------------------------------------
+
+NAME:
+SAN JOSE INTERNATIONAL AIRPORT, CA US
+
+ID:
+GHCND:USW00023293
+
+LAT/LON:
+37.359106, -121.924038
+
+START/END:
+1999-01-01 to 2021-01-01
+
+COVERAGE:
+96%
+
+NOTES:
+Data starts in 1999.
+Missing 2012 + 2018 for DX90. All there for PRCP.
+
+--------------------------------------
+MODESTO
+--------------------------------------
+
+NAME:
+MODESTO AIRPORT, CA US
+
+ID:
+GHCND:USW00023258
+
+LAT/LON:
+37.624021, -120.950546
+
+START/END:
+1906-01-01 to 2021-01-01
+
+COVERAGE:
+78%
+
+NOTES:
+Missing 1986, 1988, and 1995 for both.
+
+--------------------------------------
+SAN FRANCISCO
+--------------------------------------
+
+NAME:
+SAN FRANCISCO INTERNATIONAL AIRPORT, CA US
+
+ID:
+GHCND:USW00023234
+
+LAT/LON:
+37.619670, -122.365036
+
+START/END:
+1945-01-01 to 2021-01-01
+
+COVERAGE:
+100%
+
+NOTES:
+Missing 2019 for DX90. All there for PRCP.
+
+--------------------------------------
+SACRAMENTO
+--------------------------------------
+
+NAME:
+SACRAMENTO AIRPORT ASOS, CA US
+
+ID:
+GHCND:USW00023232
+
+LAT/LON:
+38.506803, -121.495056
+
+START/END:
+1942-01-01 to 2021-01-01
+
+COVERAGE:
+99%
+
+NOTES:
+Missing 1994 for DX90. All there for PRCP.
+
+--------------------------------------
+PARADISE
+--------------------------------------
+
+NAME:
+PARADISE, CA US
+
+ID:
+GHCND:USC00046685
+
+LAT/LON:
+39.753921, -121.624146
+
+START/END:
+1957-01-01 to 2021-01-01
+
+COVERAGE:
+81%
+
+NOTES:
+Too many gaps. Not a viable option.
