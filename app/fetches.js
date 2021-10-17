@@ -36,7 +36,20 @@ const limit = "limit=140"; //7 stations * 2 data sets * 10 years = 140.
 function fetchWeatherData(years) {
     fetch(`${base + set + catTypes + stations + units + years + limit}`, {
         headers: {token: "ADD-YOUR-NOAA-TOKEN-HERE"}
-    }).then((resp) => resp.json()).then((json) => window.console.log(json));
+    }).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        } else {
+            return Promise.reject({
+                message: "Something went wrong fetching data. Error code:",
+                status: response.status
+            });
+        }
+    }).then(function (json) {
+        window.console.log(json);
+    }).catch(function (error) {
+        window.console.log(error.message, error.status);
+    });
 }
 
 //Function calls.
