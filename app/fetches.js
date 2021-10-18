@@ -21,20 +21,24 @@ const stations = `${sd + la + bfield + fresno + graton + stockton + eureka}`;
 //Variable - units (makes results standard, not metric).
 const units = "units=standard&";
 
-//Variables - time periods.
+//Variables - time periods (individual and combined).
 const y1970s = "startdate=1970-01-01&enddate=1979-12-31&";
 const y1980s = "startdate=1980-01-01&enddate=1989-12-31&";
 const y1990s = "startdate=1990-01-01&enddate=1999-12-31&";
 const y2000s = "startdate=2000-01-01&enddate=2009-12-31&";
 const y2010s = "startdate=2010-01-01&enddate=2019-12-31&";
 const y2020s = "startdate=2020-01-01&enddate=2020-12-31&";
+const years = [y1970s, y1980s, y1990s, y2000s, y2010s, y2020s];
 
 //Variable - limit (number of results returned).
 const limit = "limit=140"; //7 stations * 2 data sets * 10 years = 140.
 
+//Data from fetches goes here.
+const yearsResult = [];
+
 //Function that fetches annual precipitation & days over 90 degrees F.
 function fetchWeatherData(years) {
-    fetch(`${base + set + catTypes + stations + units + years + limit}`, {
+    return fetch(`${base + set + catTypes + stations + units + years + limit}`, {
         headers: {token: "ADD-YOUR-NOAA-TOKEN-HERE"}
     }).then(function (response) {
         if (response.ok) {
@@ -46,19 +50,21 @@ function fetchWeatherData(years) {
             });
         }
     }).then(function (json) {
-        window.console.log(json);
+        return json;
     }).catch(function (error) {
         window.console.log(error.message, error.status);
     });
 }
 
-//Function calls.
-fetchWeatherData(y1970s);
-//fetchWeatherData(y1980s);
-//fetchWeatherData(y1990s);
-//fetchWeatherData(y2000s);
-//fetchWeatherData(y2010s);
-//fetchWeatherData(y2020s);
+//Function call. Invokes function for each item in "const years" array.
+//When all Promises have resolved, adds data to "const yearsResult" array.
+Promise.all(
+  years.map(fetchWeatherData)
+).then((yearsResult) => {
+  console.log(yearsResult);
+});
+
+//REMEMBER: REMOVE TOKEN BEFORE ADDING AND COMMITING!!!!
 
 //NOTES:
 //1. Combining multiple stations, data categories, and data types works.
@@ -66,3 +72,4 @@ fetchWeatherData(y1970s);
 //3. Querying a time period over 10 years returns an error.
 //4. If not specified, limit for NOAA queries is 25.
 //5. Your NOAA token is viewable by anyone inspecting your code.
+//6. NOAA's rate limits are 5 requests per second and 10,000 requests per day.
