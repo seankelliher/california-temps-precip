@@ -13,10 +13,9 @@ const sd = "stationid=GHCND:USW00023188&"; //San Diego.
 const la = "stationid=GHCND:USW00023174&";
 const bfield = "stationid=GHCND:USW00023155&"; //Bakersfield.
 const fresno = "stationid=GHCND:USW00093193&";
-const graton = "stationid=GHCND:USC00043578&";
 const stockton = "stationid=GHCND:USW00023237&";
 const eureka = "stationid=GHCND:USW00024213&";
-const stations = `${sd + la + bfield + fresno + graton + stockton + eureka}`;
+const stations = `${sd + la + bfield + fresno + stockton + eureka}`;
 
 //Variable - units (makes results standard, not metric).
 const units = "units=standard&";
@@ -31,7 +30,7 @@ const y2020s = "startdate=2020-01-01&enddate=2020-12-31&";
 const years = [y1970s, y1980s, y1990s, y2000s, y2010s, y2020s];
 
 //Variable - limit (number of results returned).
-const limit = "limit=140"; //7 stations * 2 data sets * 10 years = 140.
+const limit = "limit=120"; //6 stations * 2 data sets * 10 years = 120.
 
 //Data from fetches goes here.
 const yearsResult = [];

@@ -94,28 +94,6 @@ NOTES:
 All data present.
 
 --------------------------------------
-GRATON (halfway between San Jose and coast)
---------------------------------------
-
-NAME:
-GRATON, CA US
-
-ID:
-GHCND:USC00043578
-
-LAT/LON:
-38.430530, -122.864742
-
-START/END:
-1926-01-01 to 2021-01-01
-
-COVERAGE:
-94%
-
-NOTES:
-All data present.
-
---------------------------------------
 STOCKTON
 --------------------------------------
 
@@ -187,6 +165,28 @@ COVERAGE:
 NOTES:
 Data starts in 1999.
 Missing 2012 + 2018 for DX90. All there for PRCP.
+
+--------------------------------------
+GRATON (halfway between San Jose and coast)
+--------------------------------------
+
+NAME:
+GRATON, CA US
+
+ID:
+GHCND:USC00043578
+
+LAT/LON:
+38.430530, -122.864742
+
+START/END:
+1926-01-01 to 2021-01-01
+
+COVERAGE:
+94%
+
+NOTES:
+Missing 2019 for DX90. All there for PRCP.
 
 --------------------------------------
 MODESTO
