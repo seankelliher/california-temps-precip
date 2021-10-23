@@ -74,6 +74,7 @@ resultsAll.forEach(function (index) {
             eurekaPrcp[findPosition(index.date)] = index.value;
         } 
     }
+});
 
 //San Diego - GHCND:USW00023188
 //Los Angeles - GHCND:USW00023174
