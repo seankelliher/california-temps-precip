@@ -21,7 +21,8 @@
                 <h1>How Dry is the West Becoming?</h1>
             </header>
 
-            <canvas id="precipChart"></canvas>
+            <canvas id="temp-chart"></canvas>
+            <canvas id="prcp-chart"></canvas>
 
             <footer>
                 <p>Add footer notes here, if needed.</p>
@@ -34,9 +35,13 @@
 
         <!--Renders contents on index.js on page.-->
         <script type="text/javascript">
-            var precipChart = new Chart(
-                document.getElementById("precipChart"),
-                config
+            var tempChart = new Chart(
+                document.getElementById("temp-chart"),
+                configTemp
+            );
+            var prcpChart = new Chart(
+                document.getElementById("prcp-chart"),
+                configPrcp
             );
         </script>
 
