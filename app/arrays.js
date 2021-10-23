@@ -48,42 +48,30 @@ resultsAll.forEach(function (index) {
     if (index.datatype === "DX90") {
         if (index.station === "GHCND:USW00023188") {
             sanDiegoTemp[findPosition(index.date)] = index.value;
-            console.log(sanDiegoTemp);  
         } else if (index.station === "GHCND:USW00023174") {
             losAngelesTemp[findPosition(index.date)] = index.value;
-            console.log(losAngelesTemp);
         } else if (index.station === "GHCND:USW00023155") {
             bakersfieldTemp[findPosition(index.date)] = index.value;
-            console.log(bakersfieldTemp);
         } else if (index.station === "GHCND:USW00093193") {
             fresnoTemp[findPosition(index.date)] = index.value;
-            console.log(fresnoTemp);
         } else if (index.station === "GHCND:USW00023237") {
             stocktonTemp[findPosition(index.date)] = index.value;
-            console.log(stocktonTemp);
         } else if (index.station === "GHCND:USW00024213") {
             eurekaTemp[findPosition(index.date)] = index.value;
-            console.log(eurekaTemp);
-        } 
-    else if (index.datatype === "PRCP") {
+        }
+    } else if (index.datatype === "PRCP") {
         if (index.station === "GHCND:USW00023188") {
-            sanDiegoPrcp[findPosition(index.date)] = index.value;
-            console.log(sanDiegoPrcp);  
+            sanDiegoPrcp[findPosition(index.date)] = index.value; 
         } else if (index.station === "GHCND:USW00023174") {
             losAngelesPrcp[findPosition(index.date)] = index.value;
-            console.log(losAngelesPrcp);
         } else if (index.station === "GHCND:USW00023155") {
             bakersfieldPrcp[findPosition(index.date)] = index.value;
-            console.log(bakersfieldPrcp);
         } else if (index.station === "GHCND:USW00093193") {
             fresnoPrcp[findPosition(index.date)] = index.value;
-            console.log(fresnoPrcp);
         } else if (index.station === "GHCND:USW00023237") {
             stocktonPrcp[findPosition(index.date)] = index.value;
-            console.log(stocktonPrcp);
         } else if (index.station === "GHCND:USW00024213") {
             eurekaPrcp[findPosition(index.date)] = index.value;
-            console.log(eurekaPrcp);
         } 
     }
 
