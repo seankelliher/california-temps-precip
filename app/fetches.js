@@ -20,6 +20,9 @@ const stations = `${sd + la + bfield + fresno + stockton + eureka}`;
 //Variable - units (makes results standard, not metric).
 const units = "units=standard&";
 
+//Variable - all combined, except years and limit.
+const intro = `${base + set + catTypes + stations + units}`;
+
 //Variables - time periods (individual and combined).
 const y1970s = "startdate=1970-01-01&enddate=1979-12-31&";
 const y1980s = "startdate=1980-01-01&enddate=1989-12-31&";
@@ -36,32 +39,29 @@ const limit = "limit=120"; //6 stations * 2 data sets * 10 years = 120.
 const yearsResult = [];
 
 //Function that fetches annual precipitation & days over 90 degrees F.
-function fetchWeatherData(years) {
-    return fetch(`${base + set + catTypes + stations + units + years + limit}`, {
-        headers: {token: "ADD-YOUR-NOAA-TOKEN-HERE"}
-    }).then(function (response) {
-        if (response.ok) {
-            return response.json();
-        } else {
-            return Promise.reject({
-                message: "Something went wrong fetching data. Error code:",
-                status: response.status
-            });
-        }
-    }).then(function (json) {
-        return json;
-    }).catch(function (error) {
+async function fetchWeatherData() {
+    try {
+        const response = await Promise.all(
+            years.map(function (year) {
+                return fetch(`${intro + year + limit}`, {headers: {token: "ADD-YOUR-NOAA-TOKEN-HERE"}}).then(function (response) {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        return Promise.reject({
+                            message: "Error fetching data. Error code:",
+                            status: response.status
+                        });
+                    }
+                });
+            })
+        );
+        window.console.log(response);
+    } catch (error) {
         window.console.log(error.message, error.status);
-    });
+    }
 }
 
-//Function call. Invokes function for each item in "const years" array.
-//When all Promises have resolved, adds data to "const yearsResult" array.
-Promise.all(
-  years.map(fetchWeatherData)
-).then((yearsResult) => {
-  console.log(yearsResult);
-});
+//fetchWeatherData();
 
 //REMEMBER: REMOVE TOKEN BEFORE ADDING AND COMMITING!!!!
 
