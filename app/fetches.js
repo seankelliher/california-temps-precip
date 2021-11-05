@@ -55,13 +55,33 @@ async function fetchWeatherData() {
                 });
             })
         );
-        window.console.log(response);
+        extractWhatsNeeded(response);
     } catch (error) {
         window.console.log(error.message, error.status);
     }
 }
 
-//fetchWeatherData();
+function extractWhatsNeeded(response) {
+    //Extract individual arrays from response.
+    const results0 = response[0].results;
+    const results1 = response[1].results;
+    const results2 = response[2].results;
+    const results3 = response[3].results;
+    const results4 = response[4].results;
+    const results5 = response[5].results;
+
+    //Combine them into one array.
+    const resultsAll = [
+        ...results0,
+        ...results1,
+        ...results2,
+        ...results3,
+        ...results4,
+        ...results5
+    ];
+    //console.log("results all", resultsAll);
+    sortByCatsAndStations(resultsAll);
+}
 
 //REMEMBER: REMOVE TOKEN BEFORE ADDING AND COMMITING!!!!
 
