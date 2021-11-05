@@ -139,8 +139,22 @@ function sortByCatsAndStations(resultsAll) {
             }
         }
     });
-    //console.log("San Diego temps", sanDiegoTemp);
-    //console.log("Fresno precip", fresnoPrcp);
+        //Put annual temp (DX90) arrays in Local Storage.
+        localStorage.setItem("sanDiegoTempLocal", sanDiegoTemp);
+        localStorage.setItem("losAngelesTempLocal", losAngelesTemp);
+        localStorage.setItem("bakersfieldTempLocal", bakersfieldTemp);
+        localStorage.setItem("fresnoTempLocal", fresnoTemp);
+        localStorage.setItem("stocktonTempLocal", stocktonTemp);
+        localStorage.setItem("eurekaTempLocal", eurekaTemp);
+
+        //Put annual prcp (PRCP) arrays in Local Storage.
+        localStorage.setItem("sanDiegoPrcpLocal", sanDiegoPrcp);
+        localStorage.setItem("losAngelesPrcpLocal", losAngelesPrcpLocal;
+        localStorage.setItem("bakersfieldPrcpLocal", bakersfieldPrcp);
+        localStorage.setItem("fresnoPrcpLocal", fresnoPrcp);
+        localStorage.setItem("stocktonPrcpLocal", stocktonPrcpLocal;
+        localStorage.setItem("eurekaPrcpLocal", eurekaPrcp);
+
 }
 
 //REMEMBER: REMOVE TOKEN BEFORE ADDING AND COMMITING!!!!
