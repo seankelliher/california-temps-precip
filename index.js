@@ -11,3 +11,7 @@ var prcpChart = new Chart(
 );
 
 fetchWeatherData();
+
+//TO DO: add function to check local storage before fetching.
+//No reason to fetch all that data if it's already here.
+//Also, change "var" to "const" after chart is working.
