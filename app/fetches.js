@@ -90,6 +90,23 @@ function findPosition(x) {
 }
 
 function sortByCatsAndStations(resultsAll) {
+
+    //Placeholders - annual temp (DX90) arrays.
+    const sanDiegoTemp = new Array(50);
+    const losAngelesTemp = new Array(50);
+    const bakersfieldTemp = new Array(50);
+    const fresnoTemp = new Array(50);
+    const stocktonTemp = new Array(50);
+    const eurekaTemp = new Array(50);
+
+    //Placeholders - annual prcp (PRCP) arrays.
+    const sanDiegoPrcp = new Array(50);
+    const losAngelesPrcp = new Array(50);
+    const bakersfieldPrcp = new Array(50);
+    const fresnoPrcp = new Array(50);
+    const stocktonPrcp = new Array(50);
+    const eurekaPrcp = new Array(50);
+
     //For Each function, loops through "raw data." Divides it into arrays.
     resultsAll.forEach(function (index) {
         if (index.datatype === "DX90") {
