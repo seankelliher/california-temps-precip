@@ -35,9 +35,6 @@ const years = [y1970s, y1980s, y1990s, y2000s, y2010s, y2020s];
 //Variable - limit (number of results returned).
 const limit = "limit=120"; //6 stations * 2 data sets * 10 years = 120.
 
-//Data from fetches goes here.
-const yearsResult = [];
-
 //Function that fetches annual precipitation & days over 90 degrees F.
 async function fetchWeatherData() {
     try {
@@ -81,6 +78,15 @@ function extractWhatsNeeded(response) {
     ];
     //console.log("results all", resultsAll);
     sortByCatsAndStations(resultsAll);
+}
+
+//"Helper" function for the For Each function below.
+//Accepts date of object being evaluated. Ex., 1973-01-01T00:00:00.
+//Extracts the year. Ex., 1973.
+//Subtracts 1970 to determine position for value in array for results.
+//For example, in the sanDiegoTemp array, the value for 1973 goes in position 3.
+function findPosition(x) {
+    return x.substring(0, 4) - 1970;
 }
 
 function sortByCatsAndStations(resultsAll) {
