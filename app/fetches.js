@@ -140,22 +140,23 @@ function sortByCatsAndStations(resultsAll) {
         }
     });
         //Put annual temp (DX90) arrays in Local Storage.
-        localStorage.setItem("sanDiegoTempLocal", sanDiegoTemp);
-        localStorage.setItem("losAngelesTempLocal", losAngelesTemp);
-        localStorage.setItem("bakersfieldTempLocal", bakersfieldTemp);
-        localStorage.setItem("fresnoTempLocal", fresnoTemp);
-        localStorage.setItem("stocktonTempLocal", stocktonTemp);
-        localStorage.setItem("eurekaTempLocal", eurekaTemp);
+        localStorage.setItem("sanDiegoTempLocal", JSON.stringify(sanDiegoTemp));
+        localStorage.setItem("losAngelesTempLocal", JSON.stringify(losAngelesTemp));
+        localStorage.setItem("bakersfieldTempLocal", JSON.stringify(bakersfieldTemp));
+        localStorage.setItem("fresnoTempLocal", JSON.stringify(fresnoTemp));
+        localStorage.setItem("stocktonTempLocal", JSON.stringify(stocktonTemp));
+        localStorage.setItem("eurekaTempLocal", JSON.stringify(eurekaTemp));
 
         //Put annual prcp (PRCP) arrays in Local Storage.
-        localStorage.setItem("sanDiegoPrcpLocal", sanDiegoPrcp);
-        localStorage.setItem("losAngelesPrcpLocal", losAngelesPrcpLocal;
-        localStorage.setItem("bakersfieldPrcpLocal", bakersfieldPrcp);
-        localStorage.setItem("fresnoPrcpLocal", fresnoPrcp);
-        localStorage.setItem("stocktonPrcpLocal", stocktonPrcpLocal;
-        localStorage.setItem("eurekaPrcpLocal", eurekaPrcp);
-
+        localStorage.setItem("sanDiegoPrcpLocal", JSON.stringify(sanDiegoPrcp));
+        localStorage.setItem("losAngelesPrcpLocal", JSON.stringify(losAngelesPrcp));
+        localStorage.setItem("bakersfieldPrcpLocal", JSON.stringify(bakersfieldPrcp));
+        localStorage.setItem("fresnoPrcpLocal", JSON.stringify(fresnoPrcp));
+        localStorage.setItem("stocktonPrcpLocal", JSON.stringify(stocktonPrcp));
+        localStorage.setItem("eurekaPrcpLocal", JSON.stringify(eurekaPrcp));
 }
+
+export {fetchWeatherData};
 
 //REMEMBER: REMOVE TOKEN BEFORE ADDING AND COMMITING!!!!
 
