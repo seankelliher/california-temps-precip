@@ -189,6 +189,62 @@ function sortByCatsAndStations(resultsAll) {
     });
 }
 
+//FUNCTION (SINGULAR) TO SET LOCAL STORAGE.
+function setLocalStorage(name, values) {
+    return localStorage.setItem(`"${name}"`, JSON.stringify(values));
+}
+
+//FUNCTIONS (PLURAL) TO GET LOCAL STORAGE - TEMPS.
+function getLocalSanDiegoTemp() {
+    return JSON.parse(localStorage.getItem("sanDiegoTempLocal"))
+}
+
+function getLocalLosAngelesTemp() {
+    return JSON.parse(localStorage.getItem("losAngelesTempLocal"))
+}
+
+function getLocalBakersfieldTemp() {
+    return JSON.parse(localStorage.getItem("bakersfieldTempLocal"))
+}
+
+function getLocalFresnoTemp() {
+    return JSON.parse(localStorage.getItem("fresnoTempLocal"))
+}
+
+function getLocalStocktonTemp() {
+    return JSON.parse(localStorage.getItem("stocktonTempLocal"))
+}
+
+function getLocalEurekaTemp() {
+    return JSON.parse(localStorage.getItem("eurekaTempLocal"))
+}
+
+//FUNCTIONS (PLURAL) TO GET LOCAL STORAGE - PRCP.
+function getLocalSanDiegoPrcp() {
+    return JSON.parse(localStorage.getItem("sanDiegoPrcpLocal"))
+}
+
+function getLocalLosAngelesPrcp() {
+    return JSON.parse(localStorage.getItem("losAngelesPrcpLocal"))
+}
+
+function getLocalBakersfieldPrcp() {
+    return JSON.parse(localStorage.getItem("bakersfieldPrcpLocal"))
+}
+
+function getLocalFresnoPrcp() {
+    return JSON.parse(localStorage.getItem("fresnoPrcpLocal"))
+}
+
+function getLocalStocktonPrcp() {
+    return JSON.parse(localStorage.getItem("stocktonPrcpLocal"))
+}
+
+function getLocalEurekaPrcp() {
+    return JSON.parse(localStorage.getItem("eurekaPrcpLocal"))
+}
+
+
 //REMEMBER: REMOVE TOKEN BEFORE ADDING AND COMMITING!!!!
 
 //NOTES:
