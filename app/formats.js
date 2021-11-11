@@ -1,3 +1,18 @@
+import {
+    getLocalSanDiegoTemp,
+    getLocalLosAngelesTemp,
+    getLocalBakersfieldTemp,
+    getLocalFresnoTemp,
+    getLocalStocktonTemp,
+    getLocalEurekaTemp,
+    getLocalSanDiegoPrcp,
+    getLocalLosAngelesPrcp,
+    getLocalBakersfieldPrcp,
+    getLocalFresnoPrcp,
+    getLocalStocktonPrcp,
+    getLocalEurekaPrcp
+} from "./fetches.js";
+
 //Labels, displayed on the x-axis.
 const labels = [
     "1970",
@@ -67,42 +82,42 @@ const dataTemp = {
         backgroundColor: "#039BE5", //light blue 600.
         borderColor: "#039BE5",
         tension: 0.1,
-        data: JSON.parse(localStorage.getItem("sanDiegoTempLocal"))
+        data: getLocalSanDiegoTemp()
     },
     {
         label: "Los Angeles",
         backgroundColor: "#E53935", //red 600.
         borderColor: "#E53935",
         tension: 0.1,
-        data: JSON.parse(localStorage.getItem("losAngelesTempLocal"))
+        data: getLocalLosAngelesTemp()
     },
     {
         label: "Bakersfield",
         backgroundColor: "#7CB342", //light green 600.
         borderColor: "#7CB342",
         tension: 0.1,
-        data: JSON.parse(localStorage.getItem("bakersfieldTempLocal"))
+        data: getLocalBakersfieldTemp()
     },
     {
         label: "Fresno",
         backgroundColor: "#FFB300", //amber 600.
         borderColor: "#FFB300",
         tension: 0.1,
-        data: JSON.parse(localStorage.getItem("fresnoTempLocal"))
+        data: getLocalFresnoTemp()
     },
     {
         label: "Stockton",
         backgroundColor: "#757575", //gray 600.
         borderColor: "#757575",
         tension: 0.1,
-        data: JSON.parse(localStorage.getItem("stocktonTempLocal"))
+        data: getLocalStocktonTemp()
     },
     {
         label: "Eureka",
         backgroundColor: "#8E24AA", //purple 600.
         borderColor: "#8E24AA",
         tension: 0.1,
-        data: JSON.parse(localStorage.getItem("eurekaTempLocal"))
+        data: getLocalEurekaTemp()
     }]
 };
 
@@ -115,28 +130,28 @@ const dataPrcp = {
         backgroundColor: "#039BE5", //light blue 600.
         borderColor: "#039BE5",
         tension: 0.1,
-        data: JSON.parse(localStorage.getItem("sanDiegoPrcpLocal"))
+        data: getLocalSanDiegoPrcp()
     },
     {
         label: "Los Angeles",
         backgroundColor: "#E53935", //red 600.
         borderColor: "#E53935",
         tension: 0.1,
-        data: JSON.parse(localStorage.getItem("losAngelesPrcpLocal"))
+        data: getLocalLosAngelesPrcp()
     },
     {
         label: "Bakersfield",
         backgroundColor: "#7CB342", //light green 600.
         borderColor: "#7CB342",
         tension: 0.1,
-        data: JSON.parse(localStorage.getItem("bakersfieldPrcpLocal"))
+        data: getLocalBakersfieldPrcp()
     },
     {
         label: "Fresno",
         backgroundColor: "#FFB300", //amber 600.
         borderColor: "#FFB300",
         tension: 0.1,
-        data: JSON.parse(localStorage.getItem("fresnoPrcpLocal"))
+        data: getLocalFresnoPrcp()
 
     },
     {
@@ -144,18 +159,16 @@ const dataPrcp = {
         backgroundColor: "#757575", //gray 600.
         borderColor: "#757575",
         tension: 0.1,
-        data: JSON.parse(localStorage.getItem("stocktonPrcpLocal"))
+        data: getLocalStocktonPrcp()
     },
     {
         label: "Eureka",
         backgroundColor: "#8E24AA", //purple 600.
         borderColor: "#8E24AA",
         tension: 0.1,
-        data: JSON.parse(localStorage.getItem("eurekaPrcpLocal"))
+        data: getLocalEurekaPrcp()
     }]
 };
-
-//console.log(localStorage.getItem("sanDiegoTempLocal"));
 
 //Chart.defaults.font.size = 14;
 //Controls items like title, ticks on graph, tension on lines, etc.
