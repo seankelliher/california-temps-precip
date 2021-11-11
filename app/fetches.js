@@ -36,7 +36,7 @@ const years = [y1970s, y1980s, y1990s, y2000s, y2010s, y2020s];
 const limit = "limit=120"; //6 stations * 2 data sets * 10 years = 120.
 
 //Function that fetches annual precipitation & days over 90 degrees F.
-async function fetchWeatherData() {
+(async function fetchWeatherData() {
     try {
         const response = await Promise.all(
             years.map(function (year) {
@@ -56,7 +56,7 @@ async function fetchWeatherData() {
     } catch (error) {
         window.console.log(error.message, error.status);
     }
-}
+})(); //IIFE pattern.
 
 function extractWhatsNeeded(response) {
     //Extract individual arrays from response.
@@ -155,8 +155,6 @@ function sortByCatsAndStations(resultsAll) {
         localStorage.setItem("stocktonPrcpLocal", JSON.stringify(stocktonPrcp));
         localStorage.setItem("eurekaPrcpLocal", JSON.stringify(eurekaPrcp));
 }
-
-export {fetchWeatherData};
 
 //REMEMBER: REMOVE TOKEN BEFORE ADDING AND COMMITING!!!!
 
