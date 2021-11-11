@@ -111,49 +111,82 @@ function sortByCatsAndStations(resultsAll) {
     resultsAll.forEach(function (index) {
         if (index.datatype === "DX90") {
             if (index.station === "GHCND:USW00023188") {
-                sanDiegoTemp[findPosition(index.date)] = index.value;
+                if (sanDiegoTemp.length === 50) {
+                    setLocalStorage("SanDiegoTempLocal", SanDiegoTemp); 
+                } else {
+                    sanDiegoTemp[findPosition(index.date)] = index.value;
+                }
             } else if (index.station === "GHCND:USW00023174") {
-                losAngelesTemp[findPosition(index.date)] = index.value;
+                if (losAngelesTemp.length === 50) {
+                    setLocalStorage("LosAngelesTempLocal", LosAngelesTemp); 
+                } else {
+                    losAngelesTemp[findPosition(index.date)] = index.value;
+                }
             } else if (index.station === "GHCND:USW00023155") {
-                bakersfieldTemp[findPosition(index.date)] = index.value;
+                if (bakersfieldTemp.length === 50) {
+                    setLocalStorage("BakersfieldTempLocal", BakersfieldTemp); 
+                } else {
+                    bakersfieldTemp[findPosition(index.date)] = index.value;
+                }
             } else if (index.station === "GHCND:USW00093193") {
-                fresnoTemp[findPosition(index.date)] = index.value;
+                if (fresnoTemp.length === 50) {
+                    setLocalStorage("FresnoTempLocal", FresnoTemp); 
+                } else {
+                    fresnoTemp[findPosition(index.date)] = index.value;
+                }
             } else if (index.station === "GHCND:USW00023237") {
-                stocktonTemp[findPosition(index.date)] = index.value;
+                if (stocktonTemp.length === 50) {
+                    setLocalStorage("StocktonTempLocal", StocktonTemp); 
+                } else {
+                    stocktonTemp[findPosition(index.date)] = index.value;
+                }
             } else if (index.station === "GHCND:USW00024213") {
-                eurekaTemp[findPosition(index.date)] = index.value;
+                if (eurekaTemp.length === 50) {
+                    setLocalStorage("EurekaTempLocal", EurekaTemp); 
+                } else {
+                    eurekaTemp[findPosition(index.date)] = index.value;
+                }
             }
         } else if (index.datatype === "PRCP") {
             if (index.station === "GHCND:USW00023188") {
-                sanDiegoPrcp[findPosition(index.date)] = index.value;
+                if (sanDiegoPrcp.length === 50) {
+                    setLocalStorage("SanDiegoPrcpLocal", SanDiegoPrcp); 
+                } else {
+                    sanDiegoPrcp[findPosition(index.date)] = index.value;
+                }
             } else if (index.station === "GHCND:USW00023174") {
-                losAngelesPrcp[findPosition(index.date)] = index.value;
+                if (losAngelesPrcp.length === 50) {
+                    setLocalStorage("LosAngelesPrcpLocal", LosAngelesPrcp); 
+                } else {
+                    losAngelesPrcp[findPosition(index.date)] = index.value;
+                }
             } else if (index.station === "GHCND:USW00023155") {
-                bakersfieldPrcp[findPosition(index.date)] = index.value;
+                if (bakersfieldPrcp.length === 50) {
+                    setLocalStorage("BakersfieldPrcpLocal", BakersfieldPrcp); 
+                } else {
+                    bakersfieldPrcp[findPosition(index.date)] = index.value;
+                }
             } else if (index.station === "GHCND:USW00093193") {
-                fresnoPrcp[findPosition(index.date)] = index.value;
+                if (fresnoPrcp.length === 50) {
+                    setLocalStorage("FresnoPrcpLocal", FresnoPrcp); 
+                } else {
+                    fresnoPrcp[findPosition(index.date)] = index.value;
+                }
             } else if (index.station === "GHCND:USW00023237") {
-                stocktonPrcp[findPosition(index.date)] = index.value;
+                if (stocktonPrcp.length === 50) {
+                    setLocalStorage("StocktonPrcpLocal", StocktonPrcp); 
+                } else {
+                    stocktonPrcp[findPosition(index.date)] = index.value;
+                }
             } else if (index.station === "GHCND:USW00024213") {
-                eurekaPrcp[findPosition(index.date)] = index.value;
+                if (eurekaPrcp.length === 50) {
+                    setLocalStorage("EurekaPrcpLocal", EurekaPrcp); 
+                } else {
+                    eurekaPrcp[findPosition(index.date)] = index.value;
+                }
             }
         }
     });
-        //Put annual temp (DX90) arrays in Local Storage.
-        localStorage.setItem("sanDiegoTempLocal", JSON.stringify(sanDiegoTemp));
-        localStorage.setItem("losAngelesTempLocal", JSON.stringify(losAngelesTemp));
-        localStorage.setItem("bakersfieldTempLocal", JSON.stringify(bakersfieldTemp));
-        localStorage.setItem("fresnoTempLocal", JSON.stringify(fresnoTemp));
-        localStorage.setItem("stocktonTempLocal", JSON.stringify(stocktonTemp));
-        localStorage.setItem("eurekaTempLocal", JSON.stringify(eurekaTemp));
-
-        //Put annual prcp (PRCP) arrays in Local Storage.
-        localStorage.setItem("sanDiegoPrcpLocal", JSON.stringify(sanDiegoPrcp));
-        localStorage.setItem("losAngelesPrcpLocal", JSON.stringify(losAngelesPrcp));
-        localStorage.setItem("bakersfieldPrcpLocal", JSON.stringify(bakersfieldPrcp));
-        localStorage.setItem("fresnoPrcpLocal", JSON.stringify(fresnoPrcp));
-        localStorage.setItem("stocktonPrcpLocal", JSON.stringify(stocktonPrcp));
-        localStorage.setItem("eurekaPrcpLocal", JSON.stringify(eurekaPrcp));
 }
 
 //REMEMBER: REMOVE TOKEN BEFORE ADDING AND COMMITING!!!!
