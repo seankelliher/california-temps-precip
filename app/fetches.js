@@ -244,6 +244,20 @@ function getLocalEurekaPrcp() {
     return JSON.parse(localStorage.getItem("eurekaPrcpLocal"))
 }
 
+export {
+    getLocalSanDiegoTemp,
+    getLocalLosAngelesTemp,
+    getLocalBakersfieldTemp,
+    getLocalFresnoTemp,
+    getLocalStocktonTemp,
+    getLocalEurekaTemp,
+    getLocalSanDiegoPrcp,
+    getLocalLosAngelesPrcp,
+    getLocalBakersfieldPrcp,
+    getLocalFresnoPrcp,
+    getLocalStocktonPrcp,
+    getLocalEurekaPrcp
+}
 
 //REMEMBER: REMOVE TOKEN BEFORE ADDING AND COMMITING!!!!
 
