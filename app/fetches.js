@@ -36,7 +36,7 @@ const years = [y1970s, y1980s, y1990s, y2000s, y2010s, y2020s];
 const limit = "limit=120"; //6 stations * 2 data sets * 10 years = 120.
 
 //Function that fetches annual precipitation & days over 90 degrees F.
-(async function fetchWeatherData() {
+async function fetchWeatherData() {
     try {
         const response = await Promise.all(
             years.map(function (year) {
@@ -56,7 +56,7 @@ const limit = "limit=120"; //6 stations * 2 data sets * 10 years = 120.
     } catch (error) {
         window.console.log(error.message, error.status);
     }
-})(); //IIFE pattern.
+}
 
 function extractWhatsNeeded(response) {
     //Extract individual arrays from response.
@@ -139,7 +139,7 @@ function sortByCatsAndStations(resultsAll) {
             }
         }
     });
-        //Put annual temp (DX90) arrays in Local Storage.
+        //Put the items in local storage - Temps.
         localStorage.setItem("sanDiegoTempLocal", JSON.stringify(sanDiegoTemp));
         localStorage.setItem("losAngelesTempLocal", JSON.stringify(losAngelesTemp));
         localStorage.setItem("bakersfieldTempLocal", JSON.stringify(bakersfieldTemp));
@@ -147,7 +147,7 @@ function sortByCatsAndStations(resultsAll) {
         localStorage.setItem("stocktonTempLocal", JSON.stringify(stocktonTemp));
         localStorage.setItem("eurekaTempLocal", JSON.stringify(eurekaTemp));
 
-        //Put annual prcp (PRCP) arrays in Local Storage.
+        //Put the items in local storage - Prcp.
         localStorage.setItem("sanDiegoPrcpLocal", JSON.stringify(sanDiegoPrcp));
         localStorage.setItem("losAngelesPrcpLocal", JSON.stringify(losAngelesPrcp));
         localStorage.setItem("bakersfieldPrcpLocal", JSON.stringify(bakersfieldPrcp));
@@ -156,48 +156,37 @@ function sortByCatsAndStations(resultsAll) {
         localStorage.setItem("eurekaPrcpLocal", JSON.stringify(eurekaPrcp));
 }
 
-//Object of function to get local storage.
-//Invoked in formats.js.
-const getLocalStorage = {
-    sanDiegoTempLocal: function() {
-        return JSON.parse(localStorage.getItem("sanDiegoTempLocal"));
-    },
-    losAngelesTempLocal: function() {
-        return JSON.parse(localStorage.getItem("losAngelesTempLocal"));
-    },
-    bakersfieldTempLocal: function() {
-        return JSON.parse(localStorage.getItem("bakersfieldTempLocal"));
-    },
-    fresnoTempLocal: function() {
-        return JSON.parse(localStorage.getItem("fresnoTempLocal"));
-    },
-    stocktonTempLocal: function() {
-        return JSON.parse(localStorage.getItem("stocktonTempLocal"));
-    },
-    eurekaTempLocal: function() {
-        return JSON.parse(localStorage.getItem("eurekaTempLocal"));
-    },
-    sanDiegoPrcpLocal: function() {
-        return JSON.parse(localStorage.getItem("sanDiegoPrcpLocal"));
-    },
-    losAngelesPrcpLocal: function() {
-        return JSON.parse(localStorage.getItem("losAngelesPrcpLocal"));
-    },
-    bakersfieldPrcpLocal: function() {
-        return JSON.parse(localStorage.getItem("bakersfieldPrcpLocal"));
-    },
-    fresnoPrcpLocal: function() {
-        return JSON.parse(localStorage.getItem("fresnoPrcpLocal"));
-    },
-    stocktonPrcpLocal: function() {
-        return JSON.parse(localStorage.getItem("stocktonPrcpLocal"));
-    },
-    eurekaPrcpLocal: function() {
-        return JSON.parse(localStorage.getItem("eurekaPrcpLocal"));
-    }
-};
+//Get the items in local storage - Temps.
+const sanDiegoTempLoc = JSON.parse(localStorage.getItem("sanDiegoTempLocal"));
+const losAngelesTempLoc = JSON.parse(localStorage.getItem("losAngelesTempLocal"));
+const bakersfieldTempLoc = JSON.parse(localStorage.getItem("bakersfieldTempLocal"));
+const fresnoTempLoc = JSON.parse(localStorage.getItem("fresnoTempLocal"));
+const stocktonTempLoc = JSON.parse(localStorage.getItem("stocktonTempLocal"));
+const eurekaTempLoc = JSON.parse(localStorage.getItem("eurekaTempLocal"));
 
-export {getLocalStorage};
+//Get the items in local storage - Prcp.
+const sanDiegoPrcpLoc = JSON.parse(localStorage.getItem("sanDiegoPrcpLocal"));
+const losAngelesPrcpLoc = JSON.parse(localStorage.getItem("losAngelesPrcpLocal"));
+const bakersfieldPrcpLoc = JSON.parse(localStorage.getItem("bakersfieldPrcpLocal"));
+const fresnoPrcpLoc = JSON.parse(localStorage.getItem("fresnoPrcpLocal"));
+const stocktonPrcpLoc = JSON.parse(localStorage.getItem("stocktonPrcpLocal"));
+const eurekaPrcpLoc = JSON.parse(localStorage.getItem("eurekaPrcpLocal"));
+
+export {
+    fetchWeatherData,
+    sanDiegoTempLoc,
+    losAngelesTempLoc,
+    bakersfieldTempLoc,
+    fresnoTempLoc,
+    stocktonTempLoc,
+    eurekaTempLoc,
+    sanDiegoPrcpLoc,
+    losAngelesPrcpLoc,
+    bakersfieldPrcpLoc,
+    fresnoPrcpLoc,
+    stocktonPrcpLoc,
+    eurekaPrcpLoc
+};
 
 //REMEMBER: REMOVE TOKEN BEFORE ADDING AND COMMITING!!!!
 
