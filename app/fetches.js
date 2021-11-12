@@ -156,75 +156,48 @@ function sortByCatsAndStations(resultsAll) {
         localStorage.setItem("eurekaPrcpLocal", JSON.stringify(eurekaPrcp));
 }
 
-//FUNCTION (SINGULAR) TO SET LOCAL STORAGE.
-function setLocalStorage(name, values) {
-    return localStorage.setItem(`"${name}"`, JSON.stringify(values));
-}
+//Object of function to get local storage.
+//Invoked in formats.js.
+const getLocalStorage = {
+    sanDiegoTempLocal: function() {
+        return JSON.parse(localStorage.getItem("sanDiegoTempLocal"));
+    },
+    losAngelesTempLocal: function() {
+        return JSON.parse(localStorage.getItem("losAngelesTempLocal"));
+    },
+    bakersfieldTempLocal: function() {
+        return JSON.parse(localStorage.getItem("bakersfieldTempLocal"));
+    },
+    fresnoTempLocal: function() {
+        return JSON.parse(localStorage.getItem("fresnoTempLocal"));
+    },
+    stocktonTempLocal: function() {
+        return JSON.parse(localStorage.getItem("stocktonTempLocal"));
+    },
+    eurekaTempLocal: function() {
+        return JSON.parse(localStorage.getItem("eurekaTempLocal"));
+    },
+    sanDiegoPrcpLocal: function() {
+        return JSON.parse(localStorage.getItem("sanDiegoPrcpLocal"));
+    },
+    losAngelesPrcpLocal: function() {
+        return JSON.parse(localStorage.getItem("losAngelesPrcpLocal"));
+    },
+    bakersfieldPrcpLocal: function() {
+        return JSON.parse(localStorage.getItem("bakersfieldPrcpLocal"));
+    },
+    fresnoPrcpLocal: function() {
+        return JSON.parse(localStorage.getItem("fresnoPrcpLocal"));
+    },
+    stocktonPrcpLocal: function() {
+        return JSON.parse(localStorage.getItem("stocktonPrcpLocal"));
+    },
+    eurekaPrcpLocal: function() {
+        return JSON.parse(localStorage.getItem("eurekaPrcpLocal"));
+    }
+};
 
-//FUNCTIONS (PLURAL) TO GET LOCAL STORAGE - TEMPS.
-function getLocalSanDiegoTemp() {
-    return JSON.parse(localStorage.getItem("sanDiegoTempLocal"))
-}
-
-function getLocalLosAngelesTemp() {
-    return JSON.parse(localStorage.getItem("losAngelesTempLocal"))
-}
-
-function getLocalBakersfieldTemp() {
-    return JSON.parse(localStorage.getItem("bakersfieldTempLocal"))
-}
-
-function getLocalFresnoTemp() {
-    return JSON.parse(localStorage.getItem("fresnoTempLocal"))
-}
-
-function getLocalStocktonTemp() {
-    return JSON.parse(localStorage.getItem("stocktonTempLocal"))
-}
-
-function getLocalEurekaTemp() {
-    return JSON.parse(localStorage.getItem("eurekaTempLocal"))
-}
-
-//FUNCTIONS (PLURAL) TO GET LOCAL STORAGE - PRCP.
-function getLocalSanDiegoPrcp() {
-    return JSON.parse(localStorage.getItem("sanDiegoPrcpLocal"))
-}
-
-function getLocalLosAngelesPrcp() {
-    return JSON.parse(localStorage.getItem("losAngelesPrcpLocal"))
-}
-
-function getLocalBakersfieldPrcp() {
-    return JSON.parse(localStorage.getItem("bakersfieldPrcpLocal"))
-}
-
-function getLocalFresnoPrcp() {
-    return JSON.parse(localStorage.getItem("fresnoPrcpLocal"))
-}
-
-function getLocalStocktonPrcp() {
-    return JSON.parse(localStorage.getItem("stocktonPrcpLocal"))
-}
-
-function getLocalEurekaPrcp() {
-    return JSON.parse(localStorage.getItem("eurekaPrcpLocal"))
-}
-
-export {
-    getLocalSanDiegoTemp,
-    getLocalLosAngelesTemp,
-    getLocalBakersfieldTemp,
-    getLocalFresnoTemp,
-    getLocalStocktonTemp,
-    getLocalEurekaTemp,
-    getLocalSanDiegoPrcp,
-    getLocalLosAngelesPrcp,
-    getLocalBakersfieldPrcp,
-    getLocalFresnoPrcp,
-    getLocalStocktonPrcp,
-    getLocalEurekaPrcp
-}
+export {getLocalStorage};
 
 //REMEMBER: REMOVE TOKEN BEFORE ADDING AND COMMITING!!!!
 
