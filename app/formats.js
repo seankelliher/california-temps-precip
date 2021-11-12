@@ -1,16 +1,16 @@
 import {
-    getLocalSanDiegoTemp,
-    getLocalLosAngelesTemp,
-    getLocalBakersfieldTemp,
-    getLocalFresnoTemp,
-    getLocalStocktonTemp,
-    getLocalEurekaTemp,
-    getLocalSanDiegoPrcp,
-    getLocalLosAngelesPrcp,
-    getLocalBakersfieldPrcp,
-    getLocalFresnoPrcp,
-    getLocalStocktonPrcp,
-    getLocalEurekaPrcp
+    sanDiegoTempLoc,
+    losAngelesTempLoc,
+    bakersfieldTempLoc,
+    fresnoTempLoc,
+    stocktonTempLoc,
+    eurekaTempLoc,
+    sanDiegoPrcpLoc,
+    losAngelesPrcpLoc,
+    bakersfieldPrcpLoc,
+    fresnoPrcpLoc,
+    stocktonPrcpLoc,
+    eurekaPrcpLoc
 } from "./fetches.js";
 
 //Labels, displayed on the x-axis.
@@ -82,42 +82,42 @@ const dataTemp = {
         backgroundColor: "#039BE5", //light blue 600.
         borderColor: "#039BE5",
         tension: 0.1,
-        data: getLocalSanDiegoTemp()
+        data: sanDiegoTempLoc
     },
     {
         label: "Los Angeles",
         backgroundColor: "#E53935", //red 600.
         borderColor: "#E53935",
         tension: 0.1,
-        data: getLocalLosAngelesTemp()
+        data: losAngelesTempLoc
     },
     {
         label: "Bakersfield",
         backgroundColor: "#7CB342", //light green 600.
         borderColor: "#7CB342",
         tension: 0.1,
-        data: getLocalBakersfieldTemp()
+        data: bakersfieldTempLoc
     },
     {
         label: "Fresno",
         backgroundColor: "#FFB300", //amber 600.
         borderColor: "#FFB300",
         tension: 0.1,
-        data: getLocalFresnoTemp()
+        data: fresnoTempLoc
     },
     {
         label: "Stockton",
         backgroundColor: "#757575", //gray 600.
         borderColor: "#757575",
         tension: 0.1,
-        data: getLocalStocktonTemp()
+        data: stocktonTempLoc
     },
     {
         label: "Eureka",
         backgroundColor: "#8E24AA", //purple 600.
         borderColor: "#8E24AA",
         tension: 0.1,
-        data: getLocalEurekaTemp()
+        data: eurekaTempLoc
     }]
 };
 
@@ -130,45 +130,46 @@ const dataPrcp = {
         backgroundColor: "#039BE5", //light blue 600.
         borderColor: "#039BE5",
         tension: 0.1,
-        data: getLocalSanDiegoPrcp()
+        data: sanDiegoPrcpLoc
     },
     {
         label: "Los Angeles",
         backgroundColor: "#E53935", //red 600.
         borderColor: "#E53935",
         tension: 0.1,
-        data: getLocalLosAngelesPrcp()
+        data: losAngelesPrcpLoc
     },
     {
         label: "Bakersfield",
         backgroundColor: "#7CB342", //light green 600.
         borderColor: "#7CB342",
         tension: 0.1,
-        data: getLocalBakersfieldPrcp()
+        data: bakersfieldPrcpLoc
     },
     {
         label: "Fresno",
         backgroundColor: "#FFB300", //amber 600.
         borderColor: "#FFB300",
         tension: 0.1,
-        data: getLocalFresnoPrcp()
-
+        data: fresnoPrcpLoc
     },
     {
         label: "Stockton",
         backgroundColor: "#757575", //gray 600.
         borderColor: "#757575",
         tension: 0.1,
-        data: getLocalStocktonPrcp()
+        data: stocktonPrcpLoc
     },
     {
         label: "Eureka",
         backgroundColor: "#8E24AA", //purple 600.
         borderColor: "#8E24AA",
         tension: 0.1,
-        data: getLocalEurekaPrcp()
+        data: eurekaPrcpLoc
     }]
 };
+
+//console.log(localStorage.getItem("sanDiegoTempLocal"));
 
 //Chart.defaults.font.size = 14;
 //Controls items like title, ticks on graph, tension on lines, etc.
