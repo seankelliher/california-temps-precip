@@ -17,7 +17,7 @@ async function formCharts() {
     } = await setGetLocalStorage();
 
     //Labels, displayed on the x-axis.
-    const labels = [
+    const fiftyYears = [
         "1970",
         "1971",
         "1972",
@@ -71,169 +71,165 @@ async function formCharts() {
         "2020"
     ];
 
-
     //The data for each state.
     //Numbers on the y-axis are automaticlaly generted by chart.js.
     const dataTemp = {
-        labels: labels,
         datasets: [{
-            label: "San Diego",
             backgroundColor: "#039BE5", //light blue 600.
             borderColor: "#039BE5",
-            tension: 0.1,
-            data: sdTempLoc
-        },
-        {
-            label: "Los Angeles",
+            data: sdTempLoc,
+            label: "San Diego",
+            tension: 0.1
+        }, {
             backgroundColor: "#E53935", //red 600.
             borderColor: "#E53935",
-            tension: 0.1,
-            data: laTempLoc
-        },
-        {
-            label: "Bakersfield",
+            data: laTempLoc,
+            label: "Los Angeles",
+            tension: 0.1
+        }, {
             backgroundColor: "#7CB342", //light green 600.
             borderColor: "#7CB342",
-            tension: 0.1,
-            data: bfieldTempLoc
-        },
-        {
-            label: "Fresno",
+            data: bfieldTempLoc,
+            label: "Bakersfield",
+            tension: 0.1
+        }, {
             backgroundColor: "#FFB300", //amber 600.
             borderColor: "#FFB300",
-            tension: 0.1,
-            data: fresnoTempLoc
-        },
-        {
-            label: "Stockton",
+            data: fresnoTempLoc,
+            label: "Fresno",
+            tension: 0.1
+        }, {
             backgroundColor: "#757575", //gray 600.
             borderColor: "#757575",
-            tension: 0.1,
-            data: stktonTempLoc
-        },
-        {
-            label: "Eureka",
+            data: stktonTempLoc,
+            label: "Stockton",
+            tension: 0.1
+        }, {
             backgroundColor: "#8E24AA", //purple 600.
             borderColor: "#8E24AA",
-            tension: 0.1,
-            data: eurekaTempLoc
-        }]
+            data: eurekaTempLoc,
+            label: "Eureka",
+            tension: 0.1
+        }],
+        labels: fiftyYears
     };
 
     //The data for each state.
     //Numbers on the y-axis are automaticlaly generted by chart.js.
     const dataPrcp = {
-        labels: labels,
         datasets: [{
-            label: "San Diego",
             backgroundColor: "#039BE5", //light blue 600.
             borderColor: "#039BE5",
-            tension: 0.1,
-            data: sdPrcpLoc
-        },
-        {
-            label: "Los Angeles",
+            data: sdPrcpLoc,
+            label: "San Diego",
+            tension: 0.1
+        }, {
             backgroundColor: "#E53935", //red 600.
             borderColor: "#E53935",
-            tension: 0.1,
-            data: laPrcpLoc
-        },
-        {
-            label: "Bakersfield",
+            data: laPrcpLoc,
+            label: "Los Angeles",
+            tension: 0.1
+        }, {
             backgroundColor: "#7CB342", //light green 600.
             borderColor: "#7CB342",
-            tension: 0.1,
-            data: bfieldPrcpLoc
-        },
-        {
-            label: "Fresno",
+            data: bfieldPrcpLoc,
+            label: "Bakersfield",
+            tension: 0.1
+        }, {
             backgroundColor: "#FFB300", //amber 600.
             borderColor: "#FFB300",
-            tension: 0.1,
-            data: fresnoPrcpLoc
-        },
-        {
-            label: "Stockton",
+            data: fresnoPrcpLoc,
+            label: "Fresno",
+            tension: 0.1
+        }, {
             backgroundColor: "#757575", //gray 600.
             borderColor: "#757575",
-            tension: 0.1,
-            data: stktonPrcpLoc
-        },
-        {
-            label: "Eureka",
+            data: stktonPrcpLoc,
+            label: "Stockton",
+            tension: 0.1
+        }, {
             backgroundColor: "#8E24AA", //purple 600.
             borderColor: "#8E24AA",
-            tension: 0.1,
-            data: eurekaPrcpLoc
-        }]
+            data: eurekaPrcpLoc,
+            label: "Eureka",
+            tension: 0.1
+        }],
+        labels: fiftyYears
     };
 
     //Chart.defaults.font.size = 14;
     //Controls items like title, ticks on graph, tension on lines, etc.
     const configTemp = {
-        type: "line",
         data: dataTemp,
         options: {
-            responsive: true,
             plugins: {
                 title: {
                     display: true,
                     text: "Number of days 90 degrees F or above"
                 }
             },
+            responsive: true,
             scales: {
                 x: {
                     ticks: {
                         //Controls what displays on x-axis.
                         //This displays "ticks" (lines) for each other year.
-                        callback: function(val, index) {
+                        callback: function (val, index) {
                             //But displays labels every decade, 1970, 1980...
-                            return index % 5 === 0 ? this.getLabelForValue(val) : "";
+                            return (
+                                index % 5 === 0
+                                ? (this.getLabelForValue(val))
+                                : ("")
+                            );
                         },
-                        color: "#000", //Color for labels, ticks not affected.
+                        color: "#000" //Color for labels, ticks not affected.
                     }
                 }
             }
         },
+        type: "line"
     };
 
     //Chart.defaults.font.size = 14;
     //Controls items like title, ticks on graph, tension on lines, etc.
     const configPrcp = {
-        type: "line",
         data: dataPrcp,
         options: {
-            responsive: true,
             plugins: {
                 title: {
                     display: true,
                     text: "Yearly precipitation in inches"
                 }
             },
+            responsive: true,
             scales: {
                 x: {
                     ticks: {
                         //Controls what displays on x-axis.
                         //This displays "ticks" (lines) for each other year.
-                        callback: function(val, index) {
+                        callback: function (val, index) {
                             //But displays labels every decade, 1970, 1980...
-                            return index % 5 === 0 ? this.getLabelForValue(val) : "";
+                            return (
+                                index % 5 === 0
+                                ? (this.getLabelForValue(val))
+                                : ("")
+                            );
                         },
-                        color: "#000", //Color for labels, ticks not affected.
+                        color: "#000" //Color for labels, ticks not affected.
                     }
                 }
             }
         },
+        type: "line"
     };
 
-    const tempChart = new Chart(
-        document.getElementById("temp-chart"),
-        configTemp
-    );
-    const prcpChart = new Chart(
-        document.getElementById("prcp-chart"),
-        configPrcp
-    );
+    //ID's for canvas elements.
+    const canvasIdTemp = document.getElementById("temp-chart");
+    const canvasIdPrcp = document.getElementById("prcp-chart");
+
+    //Create the charts.
+    new window.Chart(canvasIdTemp, configTemp);
+    new window.Chart(canvasIdPrcp, configPrcp);
 }
 
 export {formCharts};
