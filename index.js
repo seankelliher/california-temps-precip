@@ -1,17 +1,7 @@
-import {fetchWeatherData} from "./app/fetches.js";
-import {configTemp, configPrcp} from "./app/formats.js";
+import {formCharts} from "./app/s5-build.js";
 
-var tempChart = new Chart(
-    document.getElementById("temp-chart"),
-    configTemp
-);
-var prcpChart = new Chart(
-    document.getElementById("prcp-chart"),
-    configPrcp
-);
+//When DOM loads, invoke function.
+document.addEventListener("DOMContentLoaded", function () {
 
-fetchWeatherData();
-
-//TO DO: add function to check local storage before fetching.
-//No reason to fetch all that data if it's already here.
-//Also, change "var" to "const" after chart is working.
+    formCharts();
+});
