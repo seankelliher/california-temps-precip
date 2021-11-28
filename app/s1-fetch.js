@@ -29,19 +29,19 @@ const y1980s = "startdate=1980-01-01&enddate=1989-12-31&";
 const y1990s = "startdate=1990-01-01&enddate=1999-12-31&";
 const y2000s = "startdate=2000-01-01&enddate=2009-12-31&";
 const y2010s = "startdate=2010-01-01&enddate=2019-12-31&";
-//const y2020s = "startdate=2020-01-01&enddate=2020-12-31&";
-//const years = [y1970s, y1980s, y1990s, y2000s, y2010s, y2020s];
+const y2020s = "startdate=2020-01-01&enddate=2020-12-31&";
 const years = [y1970s, y1980s, y1990s, y2000s, y2010s];
 
 //Variable - limit (number of results returned).
 const limit = "limit=120"; //6 stations * 2 data sets * 10 years = 120.
 
-//Function that fetches annual precipitation & days over 90 degrees F.
-async function fetchData() {
+//Fetch annual precipitation & days over 90 degrees F.
+//For the decades 1970s, 1980s, 1990s, 2000s, and 2010s.
+async function fetchData1() {
     try {
-        const data = await Promise.all(
+        const data1 = await Promise.all(
             years.map(function (year) {
-                return fetch(`${intro + year + limit}`, {headers: {token: "ADD-YOUR-NOAA-TOKEN-HERE"}}).then(function (response) {
+                return fetch(`${intro + year + limit}`, {headers: {token: "WiYbtfaUDqGkLVBiDviJbqArQhVsSNfq"}}).then(function (response) {
                     if (response.ok) {
                         return response.json();
                     } else {
@@ -54,11 +54,41 @@ async function fetchData() {
             })
         );
         return {
-            data
+            data1
         };
     } catch (error) {
         window.console.log(error.message, error.status);
     }
 }
 
-export {fetchData};
+//Delays fetch in fetchData2 one second (keeps you within NOAA's rate limits).
+function sleep(ms) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, ms);
+    });
+}
+
+//Fetch annual precipitation & days over 90 degrees F.
+//For the year 2020. (This "hack" lets you keep within NOAA's rate limits.)
+async function fetchData2() {
+    try {
+        await sleep(1000);
+        const data2 = await fetch(`${intro + y2020s + limit}`, {headers: {token: "WiYbtfaUDqGkLVBiDviJbqArQhVsSNfq"}}).then(function (response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                return Promise.reject({
+                    message: "Error fetching data. Error code:",
+                    status: response.status
+                });
+            }
+        });
+        return {
+            data2
+        };
+    } catch (error) {
+        window.console.log(error.message, error.status);
+    }
+}
+
+export {fetchData1, fetchData2};
