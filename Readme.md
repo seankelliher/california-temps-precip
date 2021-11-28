@@ -29,7 +29,9 @@ I found it easiest to break things down, put all JavaScript in one file, and met
 * Weather data from the [National Centers for Environmental Information](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4), part of the National Oceanic and Atmospheric Administration (NOAA).
 * Chart built with [Chart.js](https://www.chartjs.org/docs/latest/).
 * Helpful Chart.js example, Cryptocurrency Price Charts with API data and Chart.js on [Codepen](https://codepen.io/diggitydoge/pen/MWWmgJp?__cf_chl_captcha_tk__=0p_9xAp805KWSEbmYe2FWoI8MrlpQUN_VncDcE8VenI-1637378794-0-gaNycGzNB30).
+* Helpful example of using "sleep" function in JavaScript from Dan Dascalescu on [Stackoverflow](https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep).
 * Readme guidance from [Brenna Martenson](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4).
 * JavaScript guidance from [JSLint](http://jslint.com).
 * Design guidance from Google's [Material Design](https://material.io/design) and [Adobe Color](https://color.adobe.com/trends).
 * Shields from [Shields](https://shields.io).
+
