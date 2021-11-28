@@ -1,16 +1,17 @@
-import {fetchData} from "./s1-fetch.js";
+import {fetchData1, fetchData2} from "./s1-fetch.js";
 
 async function extractResults() {
 
-    const {data} = await fetchData();
+    const {data1} = await fetchData1();
+    const {data2} = await fetchData2();
 
     //Extract individual arrays from response.
-    const result0 = data[0].results;
-    const result1 = data[1].results;
-    const result2 = data[2].results;
-    const result3 = data[3].results;
-    const result4 = data[4].results;
-    //const result5 = data[5].results;
+    const result0 = data1[0].results;
+    const result1 = data1[1].results;
+    const result2 = data1[2].results;
+    const result3 = data1[3].results;
+    const result4 = data1[4].results;
+    const result5 = data2.results;
 
     //Combine them into one array.
     const results = [
@@ -18,8 +19,8 @@ async function extractResults() {
         ...result1,
         ...result2,
         ...result3,
-        ...result4
-        //...result5 comma above.
+        ...result4,
+        ...result5
     ];
     return {
         results
