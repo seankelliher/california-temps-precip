@@ -19,7 +19,7 @@ header {
 canvas {
     width: 90%;
     margin: 0;
-    padding: 1em 5%;
+    padding: 1em 5% 2em 5%;
     flex: initial; /*flex: 0 1 auto*/
 }
 
@@ -41,6 +41,16 @@ p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.8;
     font-weight: 400;
+}
+
+/*Link and hover state*/
+p a {
+    color: #007AC1; /*light blue 500 dark*/
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
 }
 
 @media all and (min-width: 300px) {
