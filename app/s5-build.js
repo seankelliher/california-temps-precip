@@ -1,4 +1,5 @@
 import {setGetLocalStorage} from "./s4-store.js";
+import {hideLoadingCircles} from "./sup-load-circles.js";
 
 async function formCharts() {
     const {
@@ -230,6 +231,9 @@ async function formCharts() {
     //Create the charts.
     new window.Chart(canvasIdTemp, configTemp);
     new window.Chart(canvasIdPrcp, configPrcp);
+
+    //Hide the loading circles.
+    hideLoadingCircles();
 }
 
 export {formCharts};
