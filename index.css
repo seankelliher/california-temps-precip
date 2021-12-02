@@ -91,6 +91,11 @@ p {
     font-weight: 400;
 }
 
+/*Italics*/
+p em {
+    color: #4B830D; /*light green 600 dark*/
+}
+
 /*Link and hover state*/
 p a {
     color: #007AC1; /*light blue 500 dark*/
