@@ -1,5 +1,5 @@
 import {setGetLocalStorage} from "./s4-store.js";
-import {hideLoadingCircles} from "./sup-notices.js";
+import {hideLoadingMsg} from "./sup-notices.js";
 
 async function formCharts() {
     const {
@@ -233,7 +233,7 @@ async function formCharts() {
     new window.Chart(canvasIdPrcp, configPrcp);
 
     //Hide the loading circles.
-    hideLoadingCircles();
+    hideLoadingMsg();
 }
 
 export {formCharts};
