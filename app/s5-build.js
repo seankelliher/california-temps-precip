@@ -1,5 +1,5 @@
 import {setGetLocalStorage} from "./s4-store.js";
-import {hideLoadingCircles} from "./sup-load-circles.js";
+import {hideLoadingCircles} from "./sup-notices.js";
 
 async function formCharts() {
     const {

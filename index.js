@@ -1,4 +1,4 @@
-import {showLoadingCircles} from "./app/sup-load-circles.js";
+import {showLoadingCircles} from "./app/sup-notices.js";
 import {formCharts} from "./app/s5-build.js";
 
 //When DOM loads, invoke function.
