@@ -1,3 +1,5 @@
+import {showErrorMsg} from "./sup-notices.js";
+
 //The below fetches annual precipitation & days over 90 degrees F.
 //The variables are numerous, but spare us from long, confusing fetch strings.
 
@@ -58,6 +60,7 @@ async function fetchData1() {
         };
     } catch (error) {
         window.console.log(error.message, error.status);
+        showErrorMsg(error.message, error.status);
     }
 }
 
@@ -88,6 +91,7 @@ async function fetchData2() {
         };
     } catch (error) {
         window.console.log(error.message, error.status);
+        showErrorMsg(error.message, error.status);
     }
 }
 
