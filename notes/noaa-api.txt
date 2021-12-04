@@ -1,0 +1,23 @@
+NOTES ABOUT NOAA API:
+
+--------------------------------------
+
+GETTING STARTED PAGE:
+
+https://www.ncdc.noaa.gov/cdo-web/webservices/v2#gettingStarted
+
+--------------------------------------
+
+HELPFUL RULES TO KNOW:
+
+1. Combining multiple stations, data categories, and data types works.
+
+2. Including data categories is optional. Results are same without them.
+
+3. Querying a time period over 10 years returns an error.
+
+4. If not specified, limit for NOAA queries is 25.
+
+5. Your NOAA token is viewable by anyone inspecting your code.
+
+--------------------------------------
