@@ -2,6 +2,7 @@ import {sortResults} from "./s3-sort.js";
 
 async function setGetLocalStorage() {
 
+    //Check local storage for data. If yes, use it. If no, fetch it from NOAA.
     const LocalCheck = JSON.parse(localStorage.getItem("sdTempLocal"));
 
     if (LocalCheck === null) {
@@ -70,3 +71,7 @@ async function setGetLocalStorage() {
 }
 
 export {setGetLocalStorage};
+
+//NOTE FOR DEVS:
+//JSON.parse() takes a JSON string and transforms it into a JS object.
+//JSON.stringify() takes a JS object and transforms it into a JSON string.

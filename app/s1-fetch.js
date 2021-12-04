@@ -1,7 +1,7 @@
 import {hideLoadingMsg, showErrorMsg} from "./sup-notices.js";
 
-//The below fetches annual precipitation & days over 90 degrees F.
-//The variables are numerous, but spare us from long, confusing fetch strings.
+//Below fetches annual precip & days over 90F for 6 CA cities, 1970 - 2020.
+//Variables are numerous, but spare us from long, confusing fetch strings.
 
 //Variables - base URL, data set, data categories & types.
 const base = "https://www.ncdc.noaa.gov/cdo-web/api/v2/data?";
@@ -37,8 +37,7 @@ const years = [y1970s, y1980s, y1990s, y2000s, y2010s];
 //Variable - limit (number of results returned).
 const limit = "limit=120"; //6 stations * 2 data sets * 10 years = 120.
 
-//Fetch annual precipitation & days over 90 degrees F.
-//For the decades 1970s, 1980s, 1990s, 2000s, and 2010s.
+//Fetching for the decades 1970s, 1980s, 1990s, 2000s, and 2010s.
 async function fetchData1() {
     try {
         const data1 = await Promise.all(
@@ -65,15 +64,15 @@ async function fetchData1() {
     }
 }
 
-//Delays fetch in fetchData2 one second (keeps you within NOAA's rate limits).
+//"Helper" function. Delays fetch by so many milliseconds.
 function sleep(ms) {
     return new Promise(function (resolve) {
         setTimeout(resolve, ms);
     });
 }
 
-//Fetch annual precipitation & days over 90 degrees F.
-//For the year 2020. (This "hack" lets you keep within NOAA's rate limits.)
+//Fetching for the year 2020.
+//Done separately and with a delay to keep within NOAA's rate limits.
 async function fetchData2() {
     try {
         await sleep(1000);
@@ -98,3 +97,6 @@ async function fetchData2() {
 }
 
 export {fetchData1, fetchData2};
+
+//NOTE FOR DEVS: If you clear both browser history AND cache while testing,
+//page will hang when you try to reload it. Quit browser and re-open to fix.
