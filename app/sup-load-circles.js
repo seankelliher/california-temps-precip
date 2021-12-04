@@ -1,35 +1,46 @@
-//Adds animation to the circles and displays them.
-function showLoadingCircles() {
-    //Gather the circles. Make "real" array.
-    const circles = document.querySelectorAll(".circles");
-    const circlesArray = Array.from(circles);
+//Variables used across below functions.
+const notice = document.getElementById("notice");
+const loadingMsg = document.getElementById("loading-msg");
+const errorMsg = document.getElementById("error-msg");
+const circles = document.querySelectorAll(".circles");
+const circlesArray = Array.from(circles);
 
-    //Assign IDs.
+//NOTE FOR DEVS: Adding/removing IDs from circles not essential.
+//But makes animation runs only when needed.
+
+function showLoadingMsg() {
+    //Assign IDs to circles.
     circlesArray[0].setAttribute("id", "circle1");
     circlesArray[1].setAttribute("id", "circle2");
     circlesArray[2].setAttribute("id", "circle3");
 
-    //Get the section. Display it.
-    const notice = document.getElementById("loading-notice");
+    //Display section, "loading" p.
     notice.style.display = "block";
+    loadingMsg.style.display = "block";
 }
 
-//Removes animation from the circles and hides them.
-function hideLoadingCircles() {
-    //Get the section. Hide it.
-    const notice = document.getElementById("loading-notice");
+function hideLoadingMsg() {
+    //Hide section, "loading" p.
     notice.style.display = "none";
+    loadingMsg.style.display = "none";
 
-    //Gather the circles. Make "real" array.
-    const circles = document.querySelectorAll(".circles");
-    const circlesArray = Array.from(circles);
-
-    //Remove IDs.
+    //Remove IDs to circles.
     circlesArray[0].removeAttribute("id");
     circlesArray[1].removeAttribute("id");
     circlesArray[2].removeAttribute("id");
 }
 
-//NOTE: You could just hide/show the #loading-notice section.
-//But, I added/remove the IDs from circles so animation runs only when needed.
-export {showLoadingCircles, hideLoadingCircles};
+function showErrorMsg(errorMessage, errorStatus) {
+    //Display section, "error" p.
+    notice.style.display = "block";
+    errorMsg.textContent = `${errorMessage}, ${errorStatus}`;
+    errorMsg.style.display = "block";
+}
+
+function hideErrorMsg() {
+    //Hide section, "error" p.
+    notice.style.display = "none";
+    errorMsg.style.display = "none";
+}
+
+export {showLoadingMsg, hideLoadingMsg, showErrorMsg, hideErrorMsg};
