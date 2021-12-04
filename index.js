@@ -1,9 +1,9 @@
-import {showLoadingCircles} from "./app/sup-notices.js";
+import {showLoadingMsg} from "./app/sup-notices.js";
 import {formCharts} from "./app/s5-build.js";
 
 //When DOM loads, invoke function.
 document.addEventListener("DOMContentLoaded", function () {
-    showLoadingCircles();
+    showLoadingMsg();
     formCharts();
 });
 
