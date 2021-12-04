@@ -1,12 +1,12 @@
 import {extractResults} from "./s2-extract.js";
 
-//"Helper" function for the For Each function below.
-//Accepts date of object being evaluated. Ex., 1973-01-01T00:00:00.
+//"Helper" function.
+//Accepts timestamp of object being evaluated. Ex., 1973-01-01T00:00:00.
 //Extracts the year. Ex., 1973.
-//Subtracts 1970 to determine position for value in array for results.
+//Subtracts 1970 to determine where value should go in array of results.
 //For example, in the sdTemp array, the value for 1973 goes in position 3.
-function findPosition(x) {
-    return x.substring(0, 4) - 1970;
+function findPosition(tStamp) {
+    return tStamp.substring(0, 4) - 1970;
 }
 
 async function sortResults() {
