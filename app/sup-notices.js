@@ -33,13 +33,12 @@ function hideLoadingMsg() {
 function showErrorMsg(errorMessage, errorStatus) {
     //Display section, "error" p.
     notice.style.display = "block";
-    errorMsg.textContent = `${errorMessage}, ${errorStatus}`;
+    errorMsg.textContent = `${errorMessage} ${errorStatus}`;
     errorMsg.style.display = "block";
 }
 
 function hideErrorMsg() {
-    //Hide section, "error" p.
-    notice.style.display = "none";
+    //Hide "error" p.
     errorMsg.style.display = "none";
 }
 
