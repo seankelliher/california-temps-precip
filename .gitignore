@@ -1,9 +1,10 @@
+# Node modules (only needed for linting in this repo).
 node_modules
 
-# Linting
+# Linting config files.
 .eslintrc.js
 .stylelintrc.json
 
-# Package json (only needed for linting in this repo)
+# Package json (only needed for linting in this repo).
 package-lock.json
 package.json
