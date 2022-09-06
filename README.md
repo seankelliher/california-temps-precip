@@ -13,8 +13,11 @@ Charts that display information on precipitation and temperatures in six cities 
 
 ## Installation and Setup Instructions
 
-This chart is built with `chart.js`. You will either need to install the program locally or link to it. Please see 
-[Installation](https://www.chartjs.org/docs/latest/getting-started/installation.html) on Chart.js's website for options and instructions. Also, this component uses ES6 modules. Developing locally may require disabling your browser's local file restrictions.
+This chart is built with `chart.js`. You will either need to install the program locally or link to it. I link to it in the `index.html` file. Please see [Installation](https://www.chartjs.org/docs/latest/getting-started/installation.html) on Chart.js's website for options and instructions.
+
+You will also need to add a valid NOAA token to fetch data from NOAA. In the `app/s1-fetch.js`file, add your token in the TWO places you see the "ADD-YOUR-NOAA-TOKEN-HERE" note.
+
+Lastly, this component uses ES6 modules. Developing locally may require disabling your browser's local file restrictions.
 
 ## Reflection
 
