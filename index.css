@@ -5,8 +5,8 @@
     padding: 0;
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start; /*main axis*/
-    align-items: flex-start; /*cross axis*/
+    justify-content: flex-start; /* main axis */
+    align-items: flex-start; /* cross axis */
 }
 
 header {
@@ -14,51 +14,54 @@ header {
     max-width: 700px;
     margin: 0 5%;
     padding: 1em 0;
-    border-bottom: 1px solid #EEE; /*grey 200*/
-    flex: initial; /*flex: 0 1 auto*/
+    border-bottom: 1px solid #eee; /* grey 200 */
+    flex: initial; /* flex: 0 1 auto */
 }
 
 section {
     width: 90%;
     margin: 0;
     padding: 1em 5%;
-    flex: initial; /*flex: 0 1 auto*/
+    flex: initial; /* flex: 0 1 auto */
 }
 
 .circles {
-    /*width, height, margin-top in "p" media queries, below*/
-    margin-right: .5em;
-    margin-left: .5em;
+    /* width, height, margin-top in "p" media queries, below */
+    margin-right: 0.5em;
+    margin-left: 0.5em;
     padding: 0;
     border-radius: 50%;
     display: inline-block;
-    background: #039BE5; /*light blue 600*/
+    background: #039be5; /* light blue 600 */
 }
 
-/*ID's for loading circles*/
-/*Shorthand: name, duration, timing-function, delay, iteration-count*/
+/* ID's for loading circles */
+
+/* Shorthand: name, duration, timing-function, delay, iteration-count */
 #circle1 {
-    animation: loadingCircle 1s ease-in-out 300ms infinite;
+    animation: loading-circle 1s ease-in-out 300ms infinite;
 }
 
 #circle2 {
-    animation: loadingCircle 1s ease-in-out 600ms infinite;
+    animation: loading-circle 1s ease-in-out 600ms infinite;
 }
 
 #circle3 {
-    animation: loadingCircle 1s ease-in-out 900ms infinite;
+    animation: loading-circle 1s ease-in-out 900ms infinite;
 }
 
-/*Animation for loading circles*/
-@keyframes loadingCircle {
+/* Animation for loading circles */
+@keyframes loading-circle {
     0% {
         transform: scale(0.8);
         opacity: 0.6;
     }
+
     50% {
         transform: scale(1);
         opacity: 1;
     }
+
     100% {
         transform: scale(0.8);
         opacity: 0.6;
@@ -68,8 +71,8 @@ section {
 canvas {
     width: 90%;
     margin: 0;
-    padding: 1em 5% 2em 5%;
-    flex: initial; /*flex: 0 1 auto*/
+    padding: 1em 5% 2em; /* longhand is 1em 5% 2em 5% */
+    flex: initial; /* flex: 0 1 auto */
 }
 
 footer {
@@ -77,10 +80,10 @@ footer {
     max-width: 700px;
     margin: 0;
     padding: 1em 5%;
-    flex: initial; /*flex: 0 1 auto*/
+    flex: initial; /* flex: 0 1 auto */
 }
 
-/*Fonts*/
+/* Fonts */
 h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -93,14 +96,14 @@ p {
     font-weight: 400;
 }
 
-/*Italics*/
+/* Italics */
 p em {
-    color: #4B830D; /*light green 600 dark*/
+    color: #4b830d; /* light green 600 dark */
 }
 
-/*Link and hover state*/
+/* Link and hover state */
 p a {
-    color: #007AC1; /*light blue 500 dark*/
+    color: #007ac1; /* light blue 500 dark */
     text-decoration: none;
 }
 
@@ -110,7 +113,7 @@ p a:hover {
 
 @media all and (min-width: 300px) {
     p {
-        font-size: .875em;
+        font-size: 0.875em;
     }
 
     h1 {
@@ -118,15 +121,15 @@ p a:hover {
     }
 
     .circles {
-        width: .875em;
-        height: .875em;
-        margin-top: .35em; /*p line-height is 1.575em*/
+        width: 0.875em;
+        height: 0.875em;
+        margin-top: 0.35em; /* p line-height is 1.575em */
     }
 }
 
 @media all and (min-width: 400px) {
     p {
-        font-size: .9375em;
+        font-size: 0.9375em;
     }
 
     h1 {
@@ -134,9 +137,9 @@ p a:hover {
     }
 
     .circles {
-        width: .9375em;
-        height: .9375em;
-        margin-top: .375em; /*p line-height is 1.6875em*/
+        width: 0.9375em;
+        height: 0.9375em;
+        margin-top: 0.375em; /* p line-height is 1.6875em */
     }
 }
 
@@ -152,7 +155,7 @@ p a:hover {
     .circles {
         width: 1em;
         height: 1em;
-        margin-top: .4em; /*p line-height is 1.8em*/
+        margin-top: 0.4em; /* p line-height is 1.8em */
     }
 }
 
