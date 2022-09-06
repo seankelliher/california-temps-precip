@@ -18,7 +18,7 @@ async function setGetLocalStorage() {
             sdPrcp,
             sdTemp,
             stktonPrcp,
-            stktonTemp
+            stktonTemp,
         } = await sortResults();
 
         //Put items in local storage - Temps.
@@ -66,7 +66,7 @@ async function setGetLocalStorage() {
         sdPrcpLoc,
         sdTempLoc,
         stktonPrcpLoc,
-        stktonTempLoc
+        stktonTempLoc,
     };
 }
 

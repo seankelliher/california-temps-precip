@@ -20,10 +20,10 @@ async function extractResults() {
         ...result2,
         ...result3,
         ...result4,
-        ...result5
+        ...result5,
     ];
     return {
-        results
+        results,
     };
 }
 

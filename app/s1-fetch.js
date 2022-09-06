@@ -48,14 +48,14 @@ async function fetchData1() {
                     } else {
                         return Promise.reject({
                             message: "Error fetching data. Error code:",
-                            status: response.status
+                            status: response.status,
                         });
                     }
                 });
-            })
+            }),
         );
         return {
-            data1
+            data1,
         };
     } catch (error) {
         //window.console.log(error.message, error.status);
@@ -82,12 +82,12 @@ async function fetchData2() {
             } else {
                 return Promise.reject({
                     message: "Error fetching data. Error code:",
-                    status: response.status
+                    status: response.status,
                 });
             }
         });
         return {
-            data2
+            data2,
         };
     } catch (error) {
         //window.console.log(error.message, error.status);

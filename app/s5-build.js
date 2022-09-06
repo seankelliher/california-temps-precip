@@ -14,7 +14,7 @@ async function formCharts() {
         sdPrcpLoc,
         sdTempLoc,
         stktonPrcpLoc,
-        stktonTempLoc
+        stktonTempLoc,
     } = await setGetLocalStorage();
 
     //Labels, displayed on the x-axis.
@@ -69,7 +69,7 @@ async function formCharts() {
         "2017",
         "2018",
         "2019",
-        "2020"
+        "2020",
     ];
 
     //The data for each state.
@@ -80,39 +80,39 @@ async function formCharts() {
             borderColor: "#039BE5",
             data: sdTempLoc,
             label: "San Diego",
-            tension: 0.1
+            tension: 0.1,
         }, {
             backgroundColor: "#E53935", //red 600.
             borderColor: "#E53935",
             data: laTempLoc,
             label: "Los Angeles",
-            tension: 0.1
+            tension: 0.1,
         }, {
             backgroundColor: "#7CB342", //light green 600.
             borderColor: "#7CB342",
             data: bfieldTempLoc,
             label: "Bakersfield",
-            tension: 0.1
+            tension: 0.1,
         }, {
             backgroundColor: "#FFB300", //amber 600.
             borderColor: "#FFB300",
             data: fresnoTempLoc,
             label: "Fresno",
-            tension: 0.1
+            tension: 0.1,
         }, {
             backgroundColor: "#757575", //gray 600.
             borderColor: "#757575",
             data: stktonTempLoc,
             label: "Stockton",
-            tension: 0.1
+            tension: 0.1,
         }, {
             backgroundColor: "#8E24AA", //purple 600.
             borderColor: "#8E24AA",
             data: eurekaTempLoc,
             label: "Eureka",
-            tension: 0.1
+            tension: 0.1,
         }],
-        labels: fiftyYears
+        labels: fiftyYears,
     };
 
     //The data for each state.
@@ -123,39 +123,39 @@ async function formCharts() {
             borderColor: "#039BE5",
             data: sdPrcpLoc,
             label: "San Diego",
-            tension: 0.1
+            tension: 0.1,
         }, {
             backgroundColor: "#E53935", //red 600.
             borderColor: "#E53935",
             data: laPrcpLoc,
             label: "Los Angeles",
-            tension: 0.1
+            tension: 0.1,
         }, {
             backgroundColor: "#7CB342", //light green 600.
             borderColor: "#7CB342",
             data: bfieldPrcpLoc,
             label: "Bakersfield",
-            tension: 0.1
+            tension: 0.1,
         }, {
             backgroundColor: "#FFB300", //amber 600.
             borderColor: "#FFB300",
             data: fresnoPrcpLoc,
             label: "Fresno",
-            tension: 0.1
+            tension: 0.1,
         }, {
             backgroundColor: "#757575", //gray 600.
             borderColor: "#757575",
             data: stktonPrcpLoc,
             label: "Stockton",
-            tension: 0.1
+            tension: 0.1,
         }, {
             backgroundColor: "#8E24AA", //purple 600.
             borderColor: "#8E24AA",
             data: eurekaPrcpLoc,
             label: "Eureka",
-            tension: 0.1
+            tension: 0.1,
         }],
-        labels: fiftyYears
+        labels: fiftyYears,
     };
 
     //Chart.defaults.font.size = 14;
@@ -166,8 +166,8 @@ async function formCharts() {
             plugins: {
                 title: {
                     display: true,
-                    text: "Number of days 90 degrees F or above"
-                }
+                    text: "Number of days 90 degrees F or above",
+                },
             },
             responsive: true,
             scales: {
@@ -183,12 +183,12 @@ async function formCharts() {
                                 : ("")
                             );
                         },
-                        color: "#000" //Color for labels, ticks not affected.
-                    }
-                }
-            }
+                        color: "#000", //Color for labels, ticks not affected.
+                    },
+                },
+            },
         },
-        type: "line"
+        type: "line",
     };
 
     //Chart.defaults.font.size = 14;
@@ -199,8 +199,8 @@ async function formCharts() {
             plugins: {
                 title: {
                     display: true,
-                    text: "Yearly precipitation in inches"
-                }
+                    text: "Yearly precipitation in inches",
+                },
             },
             responsive: true,
             scales: {
@@ -216,12 +216,12 @@ async function formCharts() {
                                 : ("")
                             );
                         },
-                        color: "#000" //Color for labels, ticks not affected.
-                    }
-                }
-            }
+                        color: "#000",//Color for labels, ticks not affected.
+                    },
+                },
+            },
         },
-        type: "line"
+        type: "line",
     };
 
     //ID's for canvas elements.
