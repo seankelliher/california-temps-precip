@@ -42,7 +42,8 @@ async function fetchData1() {
     try {
         const data1 = await Promise.all(
             years.map(function (year) {
-                return fetch(`${intro + year + limit}`, {headers: {token: "ADD-YOUR-NOAA-TOKEN-HERE"}}).then(function (response) {
+                // YOU WILL NEED TO ADD YOUR NOAA API KEY FOR THIS TO WORK.
+                return fetch(`${intro + year + limit}`, {headers: {token: process.env.NOAA_API_KEY}}).then(function (response) {
                     if (response.ok) {
                         return response.json();
                     } else {
