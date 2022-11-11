@@ -42,7 +42,7 @@ async function fetchData1() {
     try {
         const data1 = await Promise.all(
             years.map(function (year) {
-                return fetch(`${intro + year + limit}`, {headers: {token: `${process.env.NOAA_API_KEY}`}}).then(function (response) {
+                return fetch(`${intro + year + limit}`, {headers: {token: getenv("NOAA_API_KEY")}}).then(function (response) {
                     if (response.ok) {
                         return response.json();
                     } else {
