@@ -1,10 +1,10 @@
 import {extractResults} from "./s2-extract.js";
 
-//"Helper" function.
-//Accepts timestamp of object being evaluated. Ex., 1973-01-01T00:00:00.
-//Extracts the year. Ex., 1973.
-//Subtracts 1970 to determine where value should go in array of results.
-//For example, in the sdTemp array, the value for 1973 goes in position 3.
+// "Helper" function.
+// Accepts timestamp of object being evaluated. Ex., 1973-01-01T00:00:00.
+// Extracts the year. Ex., 1973.
+// Subtracts 1970 to determine where value should go in array of results.
+// For example, in the sdTemp array, the value for 1973 goes in position 3.
 function findPosition(tStamp) {
     return tStamp.substring(0, 4) - 1970;
 }
@@ -13,7 +13,7 @@ async function sortResults() {
 
     const {results} = await extractResults();
 
-    //Placeholders - annual temp (DX90) arrays.
+    // Placeholders - annual temp (DX90) arrays.
     const sdTemp = new Array(50);
     const laTemp = new Array(50);
     const bfieldTemp = new Array(50);
@@ -21,7 +21,7 @@ async function sortResults() {
     const stktonTemp = new Array(50);
     const eurekaTemp = new Array(50);
 
-    //Placeholders - annual prcp (PRCP) arrays.
+    // Placeholders - annual prcp (PRCP) arrays.
     const sdPrcp = new Array(50);
     const laPrcp = new Array(50);
     const bfieldPrcp = new Array(50);
@@ -29,7 +29,7 @@ async function sortResults() {
     const stktonPrcp = new Array(50);
     const eurekaPrcp = new Array(50);
 
-    //For Each function, loops through "raw data." Divides it into arrays.
+    // For Each function, loops through "raw data." Divides it into arrays.
     results.forEach(function (index) {
         if (index.datatype === "DX90") {
             if (index.station === "GHCND:USW00023188") {
@@ -73,7 +73,7 @@ async function sortResults() {
         sdPrcp,
         sdTemp,
         stktonPrcp,
-        stktonTemp,
+        stktonTemp
     };
 }
 
