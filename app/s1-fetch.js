@@ -1,5 +1,7 @@
 import {hideLoadingMsg, showErrorMsg} from "./sup-notices.js";
 
+<? php $noaa_token = getenv("NOAA_TOKEN"); ?>
+
 // Below fetches annual precip & days over 90F for 6 CA cities, 1970 - 2020.
 // Variables are numerous, but spare us from long, confusing fetch strings.
 
