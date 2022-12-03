@@ -1,7 +1,5 @@
 import {hideLoadingMsg, showErrorMsg} from "./sup-notices.js";
 
-<? php $noaa_token = getenv("NOAA_TOKEN"); ?>
-
 // Below fetches annual precip & days over 90F for 6 CA cities, 1970 - 2020.
 // Variables are numerous, but spare us from long, confusing fetch strings.
 
@@ -45,7 +43,7 @@ async function fetchData1() {
     try {
         const data1 = await Promise.all(
             years.map(function (year) {
-                return fetch(`${intro + year + limit}`, {headers: {token: <? php echo $noaa_token ?>}}).then(function (response) {
+                return fetch(`${intro + year + limit}`, {headers: {token: process.env.NOAA_TOKEN}}).then(function (response) {
                     if (response.ok) {
                         return response.json();
                     } else {
