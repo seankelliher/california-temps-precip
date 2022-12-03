@@ -37,13 +37,14 @@ const years = [y1970s, y1980s, y1990s, y2000s, y2010s];
 // Variable - limit (number of results returned).
 const limit = "limit=120"; // 6 stations * 2 data sets * 10 years = 120.
 
+<?php $noaa_token = getenv("NOAA_TOKEN");  ?>
+
 // Fetching for the decades 1970s, 1980s, 1990s, 2000s, and 2010s.
-$noaa_api_key = getenv("NOAA_API_KEY");
 async function fetchData1() {
     try {
         const data1 = await Promise.all(
             years.map(function (year) {
-                return fetch(`${intro + year + limit}`, {headers: {token: process.env.NOAA_TOKEN}}).then(function (response) {
+                return fetch(`${intro + year + limit}`, {headers: {token: <?php echo $noaa_token;  ?>}}).then(function (response) {
                     if (response.ok) {
                         return response.json();
                     } else {
@@ -77,7 +78,7 @@ function sleep(ms) {
 async function fetchData2() {
     try {
         await sleep(1000);
-        const data2 = await fetch(`${intro + y2020s + limit}`, {headers: {token: <? php echo $noaa_token ?>}}).then(function (response) {
+        const data2 = await fetch(`${intro + y2020s + limit}`, {headers: {token: <?php echo $noaa_token;  ?>}}).then(function (response) {
             if (response.ok) {
                 return response.json();
             } else {
