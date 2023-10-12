@@ -3,7 +3,11 @@
 
 Charts that display information on precipitation and temperatures in six cities in California, 1970 - 2020. The cities are San Diego, Los Angeles, Bakersfield, Fresno, Stockton, and Eureka. These sites were chosen because they represent different regions of California, and had complete data.
 
-## Project Screen Shot(s)
+## Project Status
+
+Next steps, accessibility and browser testing. Deploy project to server without NOAA token displaying.
+
+## Project Screen Shots
 
 * Chart 1 - days 90 degrees F or above.
 ![screen shot of project](/screenshots/california-temps-precip-screenshot1.png?s=600)
