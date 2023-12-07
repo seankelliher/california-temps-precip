@@ -42,7 +42,7 @@ async function fetchData1() {
     try {
         const data1 = await Promise.all(
             years.map(function (year) {
-                return fetch(`${intro + year + limit}`, {headers: {token: `${{ secrets:MY_SECRET_TOKEN }}`}}).then(function (response) {
+                return fetch(`${intro + year + limit}`, {headers: {token: ${secrets: MY_SECRET_TOKEN} }}).then(function (response) {
                     if (response.ok) {
                         return response.json();
                     } else {
@@ -76,7 +76,7 @@ function sleep(ms) {
 async function fetchData2() {
     try {
         await sleep(1000);
-        const data2 = await fetch(`${intro + y2020s + limit}`, {headers: {token: `${{ secrets:MY_SECRET_TOKEN }}`}}).then(function (response) {
+        const data2 = await fetch(`${intro + y2020s + limit}`, {headers: {token: ${secrets: MY_SECRET_TOKEN} }}).then(function (response) {
             if (response.ok) {
                 return response.json();
             } else {
