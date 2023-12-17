@@ -1,48 +1,16 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-
-        <title>Sean Kelliher - Heat and Precipitation in California</title>
-
-        <meta name="description" content="Add description for production model">
-        <meta name="robots" content="noindex">
-
+        <meta charset="UTF-8" />
+        <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
         <!-- Keeping favicons simple. Can add more for production model. -->
-        <link rel="icon" href="favicon.ico" sizes="any"> <!-- 32×32 -->
-        <link rel="apple-touch-icon" href="apple-touch-icon.png"> <!-- 180×180 -->
-        
-        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="icon" href="/favicon.ico" sizes="any"> <!-- 32×32 -->
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png"> <!-- 180×180 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>California Temps and Precip</title>
     </head>
-
     <body>
-
-        <div class="container">
-
-            <header>
-                <h1>Heat &amp; Precipitation in California</h1>
-                <p><strong>Is California becoming hotter and drier?</strong> These charts look at six cities over the past 50 years, 1970 - 2020. The first chart displays the number of days each year the temperature reached or exceeded 90 degrees Fahrenheit. The second chart displays the annual precipitation in inches. <em>Tap a city's name to hide/show its data.</em></p>
-            </header>
-
-            <section id="notice">
-                <p id="loading-msg">Data coming from NOAA. This may take a few seconds. <span class="circles"></span> <span class="circles"></span> <span class="circles"></span></p>
-                <p id="error-msg"></p>
-            </section>
-
-            <canvas id="temp-chart"></canvas>
-            <canvas id="prcp-chart"></canvas>
-
-            <footer>
-                <p>Data for these charts is from the <a href="https://www.ncdc.noaa.gov/cdo-web/" target="_blank">National Centers for Environmental Information</a>, part of the National Oceanic and Atmospheric Administration (<a href="https://www.noaa.gov" target="_blank">NOAA</a>). These six cities were chosen because they are located in different regions of California and offered data for the entire 50-year span.</p>
-            </footer>
-
-        </div> <!--close container class-->
-
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script type="module" src="index.js"></script>
-
+        <div id="app"></div>
+        <script type="module" src="/src/main.js"></script>
     </body>
-
 </html>
