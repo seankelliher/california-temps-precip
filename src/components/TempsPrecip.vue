@@ -17,7 +17,10 @@ const eurekaTemps = ref([]);
 const eurekaPrecip = ref([]);
 
 const tally = ref(0);
+const errorMsg = ref();
 
+// On mount, check if data is in local storage from previous visit.
+// If no, fetch data from NOAA. If yes, get data from local storage.
 onMounted(() => {
     if (!localStorage.getItem("caTempsPrecip")) {
         fetchWeatherData();
@@ -41,6 +44,8 @@ onMounted(() => {
     }
 });
 
+// If fetching data from NOAA (fetchWeatherData function), watch tally.
+// When all five decades fetched and sorted, put results in local storage.
 watch(tally, (newValue) => {
     if (newValue === 5) {
         createTempsChart();
@@ -62,6 +67,7 @@ watch(tally, (newValue) => {
     }
 });
 
+// Function to fetch and sort data from NOAA. Sorts results into arrays.
 function fetchWeatherData() {
     const decades = ["year1970s", "year1980s", "year1990s", "year2000s", "year2010s"];
     Promise.all(decades.map((decade) => {
@@ -70,7 +76,7 @@ function fetchWeatherData() {
                 if (response.ok) {
                     return response.json();
                 } else {
-                    return Promise.reject(`Error: ${response.status}, Data currently unavailable. Please try again later.`);
+                    return Promise.reject(`Error: ${response.status}. Please try again later.`);
                 }
             })
             .then((data) => {
@@ -116,17 +122,17 @@ function fetchWeatherData() {
                     }
                 });
             })
-            .catch((error) => {
-                console.log(error);
-                alert(error);
-            })
-            .finally(() => {
+            .then(() => {
                 tally.value = tally.value + 1;
                 console.log(tally.value);
+            })
+            .catch((error) => {
+                errorMsg.value = error;
             });
     }));
 }
 
+// Function to create a chart with Chart.js.
 function createTempsChart() {
     const califTempsChart = document.getElementById("calif-temps-chart");
 
@@ -193,6 +199,7 @@ function createTempsChart() {
     });
 }
 
+// Function to create a chart with Chart.js.
 function createPrecipChart() {
     const califPrecipChart = document.getElementById("calif-precip-chart");
 
@@ -258,13 +265,18 @@ function createPrecipChart() {
         }
     });
 }
-
 </script>
 
 <template>
     <div class="chart">
         <div class="chart-desc">
             <h2>Number of days 90&deg; F / 32.2&deg; C or above</h2>
+            <p
+                v-if="errorMsg !== ''"
+                class="error-msg"
+            >
+                {{ errorMsg }}
+            </p>
         </div>
         <canvas id="calif-temps-chart"></canvas>
     </div>
