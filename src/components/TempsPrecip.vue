@@ -75,7 +75,7 @@ watch(tally, (newValue) => {
 function fetchWeatherData() {
     const decades = ["year1970s", "year1980s", "year1990s", "year2000s", "year2010s"];
     Promise.all(decades.map((decade) => {
-        fetch(`http://localhost:4040/${decade}`)
+        fetch(`/${decade}`) // Using locally -> http://localhost:4040/${decade}
             .then((response) => {
                 if (response.ok) {
                     return response.json();
