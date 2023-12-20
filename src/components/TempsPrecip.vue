@@ -17,6 +17,8 @@ const eurekaTemps = ref([]);
 const eurekaPrecip = ref([]);
 
 const tally = ref(0);
+const loadShow = ref(false);
+const errorShow = ref(false);
 const errorMsg = ref();
 
 // On mount, check if data is in local storage from previous visit.
@@ -24,6 +26,7 @@ const errorMsg = ref();
 onMounted(() => {
     if (!localStorage.getItem("caTempsPrecip")) {
         fetchWeatherData();
+        loadShow.value = true;
         console.log("fetching data from NOAA");
     } else {
         sanDiegoTemps.value = JSON.parse(localStorage.getItem("sanDiegoTemps"));
@@ -48,6 +51,7 @@ onMounted(() => {
 // When all five decades fetched and sorted, put results in local storage.
 watch(tally, (newValue) => {
     if (newValue === 5) {
+        loadShow.value = false;
         createTempsChart();
         createPrecipChart();
 
@@ -128,6 +132,8 @@ function fetchWeatherData() {
             })
             .catch((error) => {
                 errorMsg.value = error;
+                errorShow.value = true;
+                loadShow.value = false;
             });
     }));
 }
@@ -272,7 +278,13 @@ function createPrecipChart() {
         <div class="chart-desc">
             <h2>Number of days 90&deg; F / 32.2&deg; C or above</h2>
             <p
-                v-if="errorMsg !== ''"
+                v-if="loadShow === true"
+                class="load-msg"
+            >
+                Data is coming from NOAA. Patience please.
+            </p>
+            <p
+                v-if="errorShow === true"
                 class="error-msg"
             >
                 {{ errorMsg }}
