@@ -4,7 +4,7 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-//import process from "process";
+import process from "process";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -13,12 +13,12 @@ const __dirname = path.dirname(__filename);
 // ========================
 // Middlewares
 // ========================
-//app.use(express.static(__dirname + "/dist/")); // For Heroku deployment.
+app.use(express.static(__dirname + "/dist/")); // For Heroku deployment.
 
 // ========================
 // Routes
 // ========================
-//const token = process.env.TOKEN_NAME; // In Heroku, NOAA token kept here.
+const token = process.env.NOAA_TOKEN; // In Heroku, NOAA token kept here.
 
 // Variables - base URL, data set, data categories & types.
 const base = "https://www.ncdc.noaa.gov/cdo-web/api/v2/data?";
@@ -54,7 +54,7 @@ const y2010s = "startdate=2010-01-01&enddate=2019-12-31&";
 const limit = "limit=120"; //6 stations * 2 data sets * 10 years = 120.
 
 app.get("/year1970s", (req, res) => {
-    fetch(`${intro + y1970s + limit}`, {headers: {token: "ADD-NOAA-TOKEN"}})
+    fetch(`${intro + y1970s + limit}`, {headers: {token: `${token}`}})
         .then(res => {
             if (!res.ok) {
                 throw new Error(res.status);
@@ -74,7 +74,7 @@ app.get("/year1970s", (req, res) => {
 });
 
 app.get("/year1980s", (req, res) => {
-    fetch(`${intro + y1980s + limit}`, {headers: {token: "ADD-NOAA-TOKEN"}})
+    fetch(`${intro + y1980s + limit}`, {headers: {token: `${token}`}})
         .then(res => {
             if (!res.ok) {
                 throw new Error(res.status);
@@ -94,7 +94,7 @@ app.get("/year1980s", (req, res) => {
 });
 
 app.get("/year1990s", (req, res) => {
-    fetch(`${intro + y1990s + limit}`, {headers: {token: "ADD-NOAA-TOKEN"}})
+    fetch(`${intro + y1990s + limit}`, {headers: {token: `${token}`}})
         .then(res => {
             if (!res.ok) {
                 throw new Error(res.status);
@@ -114,7 +114,7 @@ app.get("/year1990s", (req, res) => {
 });
 
 app.get("/year2000s", (req, res) => {
-    fetch(`${intro + y2000s + limit}`, {headers: {token: "ADD-NOAA-TOKEN"}})
+    fetch(`${intro + y2000s + limit}`, {headers: {token: `${token}`}})
         .then(res => {
             if (!res.ok) {
                 throw new Error(res.status);
@@ -134,7 +134,7 @@ app.get("/year2000s", (req, res) => {
 });
 
 app.get("/year2010s", (req, res) => {
-    fetch(`${intro + y2010s + limit}`, {headers: {token: "ADD-NOAA-TOKEN"}})
+    fetch(`${intro + y2010s + limit}`, {headers: {token: `${token}`}})
         .then(res => {
             if (!res.ok) {
                 throw new Error(res.status);
@@ -160,10 +160,10 @@ app.get(/.*/, function (req, res) {
 // ========================
 // Listen
 // ========================
-/* app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Server listening on port ${process.env.PORT}`);
-}); */
-
-app.listen(4040, () => {
-    console.log("Server listening on port 4040");
 });
+
+/* app.listen(4040, () => {
+    console.log("Server listening on port 4040");
+}); */
