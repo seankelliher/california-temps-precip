@@ -62,8 +62,12 @@ p {
     color: #001849;
 }
 
+.load-msg {
+    color: #206c24; /* green */
+}
+
 .error-msg {
-    color: #ba1a1a;
+    color: #ba1a1a; /* red */
 }
 
 h1 {
