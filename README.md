@@ -1,15 +1,15 @@
 [![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/california-temps-precip?style=flat-square)](/LICENSE.txt)
 ## California Temperatures & Precipitation
 
-Charts that display information on precipitation and temperatures in six cities in California, 1970 - 2020. The cities are San Diego, Los Angeles, Bakersfield, Fresno, Stockton, and Eureka. These sites were chosen because they represent different regions of California, and had complete data. Built with Vue.js and Chart.js.
+Charts that display information on precipitation and temperatures in six cities in California, 1970 - 2020. The cities are San Diego, Los Angeles, Bakersfield, Fresno, Stockton, and Eureka. These sites were chosen because they represent different regions of California, and had complete data. Built with Vue.js and Chart.js. [View working component](https://california-temps-precip-51abd5847179.herokuapp.com). **"Eco" dyno, takes a few seconds to wake up.** 
 
 ## Project Status
 
-UNDER RENOVATION: Mostly built, polishing styles and error handling.
+Next steps, I want to do more extensive accessibility and browser testing.
 
 ## Project Screen Shots
 
-* Chart 1 - days 90 degrees F or above.
+* Chart 1 - days 90 degrees F / 32.2 degrees C or above.
 ![screen shot of project](/screenshots/california-temps-precip-screenshot1.png?s=600)
 
 * Chart 2 - annual precipitation in inches.
