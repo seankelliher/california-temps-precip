@@ -1,6 +1,7 @@
 /* Stylesheet uses Level 3 Media Queries. Level 4 coverage still spotty. */
-html {
-    background: #fefbff;
+body {
+    background: #fffbff;
+    margin-top: 0;
 }
 
 /* Image becomes no larger than actual size. */
@@ -23,9 +24,52 @@ img {
 
 header {
     width: 90%;
-    max-width: 640px;
     margin: 0;
-    padding: 1em 5%;
+    padding: 0.25em 5%;
+    background: #fff8f5;
+    border-bottom: 2px solid #2e1500;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; /* main axis */
+    align-items: center; /* cross axis */
+    position: relative;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: -2px;
+    width: 2000px;
+    left: 100%;
+    background: #fff8f5;
+    border-bottom: 2px solid #2e1500;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: -2px;
+    width: 2000px;
+    right: 100%;
+    background: #fff8f5;
+    border-bottom: 2px solid #2e1500;
+}
+
+.headline {
+    width: 75%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+}
+
+figure {
+    width: 20%;
+    max-width: 80px;
+    margin: 0;
+    padding: 0;
     flex: initial;
 }
 
@@ -59,11 +103,11 @@ p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.8;
     font-weight: 400;
-    color: #001849;
+    color: #201b17;
 }
 
 .load-msg {
-    color: #206c24; /* green */
+    color: #006d35; /* green */
 }
 
 .error-msg {
@@ -74,69 +118,46 @@ h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.3;
     font-weight: 600;
-    color: #001849;
-}
-
-h2 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.3;
-    font-weight: 500;
-    color: #001849;
+    color: #2e1500;
 }
 
 /* Media queries for fonts */
 @media (min-width: 300px) and (max-width: 399px) {
     p  {
-        font-size: 1.0625em; /* 17px */
+        font-size: 0.8125em; /* 13px */
     }
 
     h1 {
-        font-size: 1.125em; /* 18 px */
-    }
-
-    h2 {
-        font-size: 1.125em; /* 18 px */
+        font-size: 0.875em; /* 14px */
     }
 }
 
 @media (min-width: 400px) and (max-width: 499px) {
-    p {
-        font-size: 1.125em; /* 18 px */
+    p  {
+        font-size: 0.875em; /* 14px */
     }
 
     h1 {
-        font-size: 1.1875em; /* 19px */
-    }
-
-    h2 {
-        font-size: 1.1875em; /* 19px */
+        font-size: 0.9375em; /* 15px */
     }
 }
 
 @media (min-width: 500px) and (max-width: 599px) {
     p {
-        font-size: 1.1875em; /* 19px */
+        font-size: 0.9375em; /* 15px */
     }
 
     h1 {
-        font-size: 1.25em; /* 20px */
-    }
-
-    h2 {
-        font-size: 1.25em; /* 20px */
+        font-size: 1em; /* 16px */
     }
 }
 
 @media (min-width: 600px) {
     p {
-        font-size: 1.1875em; /* 19px */
+        font-size: 1em; /* 16px */
     }
 
     h1 {
-        font-size: 1.3125em; /* 21px */
-    }
-
-    h2 {
-        font-size: 1.3125em; /* 21px */
+        font-size: 1.0625em; /* 17px */
     }
 }
