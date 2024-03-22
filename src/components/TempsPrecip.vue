@@ -80,7 +80,7 @@ function fetchWeatherData() {
                 if (response.ok) {
                     return response.json();
                 } else {
-                    return Promise.reject(`Error: ${response.status}. Please try again later.`);
+                    return Promise.reject(`Error: ${response.status}. Please wait a few seconds and try refreshing your browser.`);
                 }
             })
             .then((data) => {
@@ -281,7 +281,7 @@ function createPrecipChart() {
                 v-if="loadShow === true"
                 class="load-msg"
             >
-                Data is coming from NOAA. Patience please.
+                Data coming from NOAA. Thanks for your patience.
             </p>
             <p
                 v-if="errorShow === true"
