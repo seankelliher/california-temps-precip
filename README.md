@@ -5,7 +5,7 @@ Charts that display information on precipitation and temperatures in six cities 
 
 ## Project Status
 
-Next steps, I want to do more extensive accessibility and browser testing.
+Next steps, I want to do more extensive accessibility and browser testing. Also, I would like to find a way to make the Chart.js portion of the page meet WCAG standards.
 
 ## Project Screen Shots
 
@@ -44,6 +44,7 @@ I wanted to build several charts that examined precipitation and heat in Califor
 * Weather data from the [National Centers for Environmental Information](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4), part of the National Oceanic and Atmospheric Administration (NOAA).
 * Chart built with [Chart.js](https://www.chartjs.org/docs/latest/).
 * Helpful Chart.js example, by diggidydoge on [Codepen](https://codepen.io/diggitydoge/pen/MWWmgJp?__cf_chl_captcha_tk__=0p_9xAp805KWSEbmYe2FWoI8MrlpQUN_VncDcE8VenI-1637378794-0-gaNycGzNB30).
+* Flag, State of California [Wikipedia](https://en.m.wikipedia.org/wiki/File:Flag_of_California.svg).
 * Readme guidance from [Brenna Martenson](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4).
 * Linting guidance from [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io).
 * Design guidance from Google's [Material Design](https://material.io/design).
