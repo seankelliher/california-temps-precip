@@ -3,8 +3,13 @@
 
 <template>
     <header>
-        <h1>Hot Days, Rain, and Snow in California</h1>
-        <p>These charts display the number of hot days and inches of precipitation each year in six cities over the past 50 years, 1970 - 2020. <em>Tap a city's name to hide/show its data.</em></p>
+        <div class="headline">
+            <h1>California Heat &amp; Precipitation, 1970 - 2020</h1>
+        </div>
+        <figure>
+            <img src="/flag-state-of-california.svg" alt="flag for the State of California">
+            <figcaption hidden>California State flag</figcaption>
+        </figure>
     </header>
 </template>
 
