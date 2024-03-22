@@ -276,7 +276,7 @@ function createPrecipChart() {
 <template>
     <div class="chart">
         <div class="chart-desc">
-            <h2>Number of days 90&deg; F / 32.2&deg; C or above</h2>
+            <p>Number of days 90&deg; F / 32.2&deg; C or above</p>
             <p
                 v-if="loadShow === true"
                 class="load-msg"
@@ -295,7 +295,7 @@ function createPrecipChart() {
 
     <div class="chart">
         <div class="chart-desc">
-            <h2>Yearly precipitation in inches</h2>
+            <p>Annual precipitation in inches</p>
         </div>
         <canvas id="calif-precip-chart"></canvas>
     </div>
