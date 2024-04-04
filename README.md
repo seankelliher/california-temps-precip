@@ -5,7 +5,7 @@ Charts that display information on precipitation and temperatures in six cities 
 
 ## Project Status
 
-Next steps, I want to do more extensive accessibility and browser testing. Also, I would like to find a way to make the Chart.js portion of the page meet WCAG standards.
+Project meets general accessibility (WACG) and cross-browser requirements. More testing with a dedicated services (e.g., Sauce Labs) would be helpful if deploying to production.
 
 ## Project Screen Shots
 
