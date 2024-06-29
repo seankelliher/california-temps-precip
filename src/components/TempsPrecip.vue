@@ -143,7 +143,7 @@ function createTempsChart() {
     const califTempsChart = document.getElementById("calif-temps-chart");
 
     new Chart(califTempsChart, {
-        type: "line",
+        type: "scatter",
         data: {
             labels: yearsList,
             datasets: [{
@@ -197,8 +197,45 @@ function createTempsChart() {
         },
         options: {
             scales: {
+                x: { // removes comma from years
+                    ticks: {
+                        callback: function(value) {
+                            return value;
+                        }
+                    }
+                },
                 y: {
                     beginAtZero: true
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || "";
+
+                            if (label) {
+                                label += ": ";
+                            }
+                            if (context.parsed.y !== null) {
+                                label += context.parsed.y + " days";
+                            }
+                            return label;
+                        }
+                    }
+                },
+                legend: {
+                    labels: {
+                        font: {
+                            size: 14,
+                            family: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                        }
+                    }
+                }
+            },
+            elements: {
+                point: {
+                    radius: 5
                 }
             }
         }
@@ -210,7 +247,7 @@ function createPrecipChart() {
     const califPrecipChart = document.getElementById("calif-precip-chart");
 
     new Chart(califPrecipChart, {
-        type: "line",
+        type: "scatter",
         data: {
             labels: yearsList,
             datasets: [{
@@ -264,8 +301,45 @@ function createPrecipChart() {
         },
         options: {
             scales: {
+                x: { // removes comma from years
+                    ticks: {
+                        callback: function(value) {
+                            return value;
+                        }
+                    }
+                },
                 y: {
                     beginAtZero: true
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || "";
+
+                            if (label) {
+                                label += ": ";
+                            }
+                            if (context.parsed.y !== null) {
+                                label += context.parsed.y + " inches";
+                            }
+                            return label;
+                        }
+                    }
+                },
+                legend: {
+                    labels: {
+                        font: {
+                            size: 14,
+                            family: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                        }
+                    }
+                }
+            },
+            elements: {
+                point: {
+                    radius: 5
                 }
             }
         }
