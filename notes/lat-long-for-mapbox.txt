@@ -1,0 +1,60 @@
+1. Eureka
+https://database.earth/countries/united-states/regions/california/cities/eureka
+
+40.80207
+
+-124.16367
+
+----------------
+
+2. Stockton
+https://database.earth/countries/united-states/regions/california/cities/stockton
+
+37.9577
+
+-121.29078
+
+----------------
+
+3. Fresno
+https://database.earth/countries/united-states/regions/california/cities/fresno
+
+36.74773
+
+-119.77237
+
+----------------
+
+4. Bakersfield
+https://database.earth/countries/united-states/regions/california/cities/bakersfield
+
+35.37329
+
+-119.01871
+
+----------------
+
+5. Los Angeles
+https://database.earth/countries/united-states/regions/california/cities/los-angeles
+
+34.05223
+
+-118.24368
+
+----------------
+
+6. San Diego
+https://database.earth/countries/united-states/regions/california/cities/san-diego
+
+32.71571
+
+-117.16472
+
+----------------
+
+MAPBOX STATIC API
+
+https://docs.mapbox.com/playground/static/
+
+----------------
+
