@@ -16,7 +16,7 @@ Project meets general accessibility (WACG) and cross-browser requirements. More 
 ![screen shot of project](/screenshots/california-temps-precip-screenshot2.png?s=600)
 
 * Precipitation chart
-![screen shot of project](/screenshots/california-temps-precip-screenshot2.png?s=600)
+![screen shot of project](/screenshots/california-temps-precip-screenshot3.png?s=600)
 
 ## Installation and Setup Instructions
 
