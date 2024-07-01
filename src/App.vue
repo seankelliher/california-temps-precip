@@ -1,11 +1,13 @@
 <script setup>
 import TempsPrecip from "./components/TempsPrecip.vue";
-import HeaderIntro from "./components/HeaderIntro.vue";
+import PanoImage from "./components/PanoImage.vue";
+import LocationsMap from "./components/LocationsMap.vue";
 </script>
 
 <template>
     <div id="container">
-        <HeaderIntro />
+        <PanoImage />
+        <LocationsMap />
         <TempsPrecip />
     </div>
 </template>
