@@ -9,10 +9,13 @@ Project meets general accessibility (WACG) and cross-browser requirements. More 
 
 ## Project Screen Shots
 
-* Chart 1 - days 90 degrees F / 32.2 degrees C or above.
+* Opening screen
 ![screen shot of project](/screenshots/california-temps-precip-screenshot1.png?s=600)
 
-* Chart 2 - annual precipitation in inches.
+* Intro text and locations map
+![screen shot of project](/screenshots/california-temps-precip-screenshot2.png?s=600)
+
+* Precipitation chart
 ![screen shot of project](/screenshots/california-temps-precip-screenshot2.png?s=600)
 
 ## Installation and Setup Instructions
