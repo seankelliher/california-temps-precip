@@ -4,7 +4,7 @@
 <template>
     <div class="pano">
         <div class="pano-headline">
-            <h1>Rain &amp; Heat in the Golden State - Is California Still Dreamin'?</h1>
+            <h1>Golden State Weather - Is California Still Dreamin'?</h1>
         </div>
 
         <figure class="pano-img">
