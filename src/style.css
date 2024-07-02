@@ -60,6 +60,7 @@ img {
     width: 90%;
     padding: 0.5em 5%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em; /* 16px */
     line-height: 1.5;
     font-weight: 400;
     color: #41484d;
@@ -168,13 +169,15 @@ canvas {
 /* Font styles and their media queries */
 figcaption {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em; /* 16px */
     line-height: 1.5;
     font-weight: 400;
-    color: #41484d; /* CHECK THIS */
+    color: #41484d;
 }
 
 p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.125em; /* 18 px */
     line-height: 1.8;
     font-weight: 400;
     color: #201b17;
@@ -203,52 +206,15 @@ h2 {
     color: #201b17;
 }
 
+h3 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #201b17;
+}
+
 /* Media queries for fonts */
 @media (min-width: 300px) and (max-width: 399px) {
-    .pano-caption, figcaption {
-        font-size: 0.8125em; /* 13px */
-    }
-
-    p  {
-       font-size: 0.9375em; /* 15px */
-    }
-
-    h1 {
-        font-size: 1.1875em; /* 19px */
-    }
-
-    h2 {
-        font-size: 1.0625em; /* 17px */
-    }
-}
-
-@media (min-width: 400px) and (max-width: 499px) {
-    .pano-caption, figcaption {
-        font-size: 0.875em; /* 14px */
-    }
-
-    p  {
-       font-size: 0.9375em; /* 15px */
-    }
-
-    h1 {
-        font-size: 1.25em; /* 20px */
-    }
-
-    h2 {
-        font-size: 1.125em; /* 18 px */
-    }
-}
-
-@media (min-width: 500px) and (max-width: 599px) {
-    .pano-caption, figcaption {
-        font-size: 0.9375em; /* 15px */
-    }
-
-    p {
-        font-size: 1em; /* 16px */
-    }
-
     h1 {
         font-size: 1.3125em; /* 21px */
     }
@@ -256,22 +222,50 @@ h2 {
     h2 {
         font-size: 1.1875em; /* 19px */
     }
+
+    h3 {
+        font-size: 1.0625em; /* 17px */
+    }
 }
 
-@media (min-width: 600px) {
-    .pano-caption, figcaption {
-        font-size: 1em; /* 16px */
-    }
-
-    p {
-        font-size: 1em; /* 16px */
-    }
-
+@media (min-width: 400px) and (max-width: 499px) {
     h1 {
         font-size: 1.375em; /* 22px */
     }
 
     h2 {
+        font-size: 1.25em; /* 20px */
+    }
+
+    h3 {
+        font-size: 1.125em; /* 18 px */
+    }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+    h1 {
+        font-size: 1.4375em; /* 23px */
+    }
+
+    h2 {
+        font-size: 1.3125em; /* 21px */
+    }
+
+    h3 {
+        font-size: 1.1875em; /* 19px */
+    }
+}
+
+@media (min-width: 600px) {
+    h1 {
+        font-size: 1.5em; /* 24px */
+    }
+
+    h2 {
+        font-size: 1.375em; /* 22px */
+    }
+
+    h3 {
         font-size: 1.25em; /* 20px */
     }
 }
