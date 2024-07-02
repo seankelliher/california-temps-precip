@@ -350,7 +350,7 @@ function createPrecipChart() {
 <template>
     <div class="chart">
         <div class="chart-desc">
-            <h2>Annual hot days, 90&deg; F or above</h2>
+            <h3>Annual hot days, 90&deg; F or above</h3>
             <p
                 v-if="loadShow === true"
                 class="load-msg"
@@ -369,7 +369,7 @@ function createPrecipChart() {
 
     <div class="chart">
         <div class="chart-desc">
-            <h2>Annual precipitation, inches</h2>
+            <h3>Annual precipitation, inches</h3>
         </div>
         <canvas id="calif-precip-chart"></canvas>
     </div>
