@@ -62,12 +62,12 @@ img {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-    color: #41484d; /* CHECK THIS */
+    color: #41484d;
     flex: initial;
 }
 
 .pano-caption a {
-    color: #41484d; /* CHECK THIS */
+    color: #41484d;
     text-decoration: underline;
 }
 
@@ -127,7 +127,6 @@ section {
         width: 45%;
         margin: 4em 0;
     }
-
 }
 
 .chart {
