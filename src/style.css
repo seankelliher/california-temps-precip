@@ -1,6 +1,6 @@
 /* Stylesheet uses Level 3 Media Queries. Level 4 coverage still spotty. */
 body {
-    background: #fffbff;
+    background: #f5fafb; /* N-98 */
     margin-top: 0;
 }
 
@@ -63,12 +63,12 @@ img {
     font-size: 1em; /* 16px */
     line-height: 1.5;
     font-weight: 400;
-    color: #41484d;
+    color: #2b3133; /* N-20 */
     flex: initial;
 }
 
 .pano-caption a {
-    color: #41484d;
+    color: #2b3133; /* N-20 */
     text-decoration: underline;
 }
 
@@ -78,78 +78,229 @@ img {
 
 section {
     width: 90%;
-    margin: 0;
+    margin: 1em 0;
     padding: 0 5%;
     flex: initial;
     display: flex;
     flex-flow: row wrap;
+    justify-content: center; /* main axis */
     align-items: flex-start; /* cross axis */
 }
 
-.text {
-    padding: 0;
-    flex: initial;
-}
-
-.map {
-    padding: 0;
-    flex: initial;
-}
-
-@media (min-width: 300px) and (max-width: 999px) {
-    section {
-        justify-content: center /* main axis */
-    }
-
+@media (min-width: 300px) and (max-width: 599px) {
     .text {
         width: 100%;
-        max-width: 600px;
-        margin: 2em 0 1em; /* longhand 2em 0 1em 0 */
+        margin: 1em 0;
+        padding: 0;
+        flex: initial;
     }
 
     .map {
         width: 100%;
-        max-width: 600px;
-        margin: 1em 0 2em; /* longhand 1em 0 2em 0 */
+        margin: 1em 0;
+        padding: 0;
+        flex: initial;
     }
 }
 
-@media (min-width: 1000px) {
-    section {
-        justify-content: space-around; /* main axis */
+@media (min-width: 600px) and (max-width: 699px) {
+    .text {
+        width: 95%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+        flex: initial;
     }
 
+    .map {
+        width: 85%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+        flex: initial;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 799px) {
     .text {
-        width: 45%;
-        margin: 4em 0;
+        width: 85%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+        flex: initial;
+    }
+
+    .map {
+        width: 75%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+        flex: initial;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 899px) {
+    .text {
+        width: 75%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+        flex: initial;
+    }
+
+    .map {
+        width: 65%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+        flex: initial;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 999px) {
+    .text {
+        width: 70%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+        flex: initial;
+    }
+
+    .map {
+        width: 60%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+        flex: initial;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1099px) {
+    .text {
+        width: 64%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+        flex: initial;
+    }
+
+    .map {
+        width: 54%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+        flex: initial;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1199px) {
+    .text {
+        width: 60%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+        flex: initial;
+    }
+
+    .map {
+        width: 50%;
+        margin: 1em 5%;
+        padding: 0;
+        flex: initial;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text {
+        width: 55%;
+        margin: 1em 5%;
+        padding: 0;
+        flex: initial;
     }
 
     .map {
         width: 45%;
-        margin: 4em 0;
+        margin: 1em 5%;
+        padding: 0;
+        flex: initial;
     }
 }
 
-.chart {
+.chart-container {
     width: 90%;
-    padding: 0 5%;
+    margin: 0;
+    padding: 2em 5%;
+    background: #eff5f6; /* N-96 */
     flex: initial;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start; /* main axis */
     align-items: flex-start; /* cross axis */
+    position: relative;
 }
 
-@media (min-width: 300px) and (max-width: 999px) {
-    .chart {
-        margin-bottom: 2em;
-    }
+.chart-container::before {
+    content: "";
+    position: absolute;
+    inset: 0 calc((100vw - 100%) / -2) 0 calc((100vw - 100%) / -2);
+    background: #eff5f6; /* N-96 */
+    z-index: -1;
 }
 
-@media (min-width: 1000px) {
-    .chart {
-        margin-bottom: 4em;
-    }
+nav {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+button {
+    /* width: 100px; */
+    margin-right: 2.5%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.875em; /* 14px */
+    line-height: 1.5;
+    font-weight: 500;
+    color: #37618e; /* P-40 */
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+button:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: #1c4975; /* P-30 */
+}
+
+.selected {
+    border-bottom: 2px solid #37618e; /* P-40 */
+}
+
+.loading-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+}
+
+.chart {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: flex-start; /* cross axis */
 }
 
 .chart-desc {
@@ -172,7 +323,7 @@ figcaption {
     font-size: 1em; /* 16px */
     line-height: 1.5;
     font-weight: 400;
-    color: #41484d;
+    color: #2b3133; /* N-20 */
 }
 
 p {
@@ -180,15 +331,15 @@ p {
     font-size: 1.125em; /* 18 px */
     line-height: 1.8;
     font-weight: 400;
-    color: #201b17;
+    color: #171d1e; /* N-10 */
 }
 
 .load-msg {
-    color: #006d35; /* green */
+    color: #006874; /* T-40 */
 }
 
 .error-msg {
-    color: #ba1a1a; /* red */
+    color: #ba1a1a; /* E-40 */
 }
 
 h1 {
@@ -196,21 +347,21 @@ h1 {
     line-height: 1.8;
     font-weight: 600;
     font-style: italic;
-    color: #201b17;
+    color: #171d1e; /* N-10 */
 }
 
 h2 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.5;
+    line-height: 1.8;
     font-weight: 600;
-    color: #201b17;
+    color: #171d1e; /* N-10 */
 }
 
 h3 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.2;
     font-weight: 500;
-    color: #201b17;
+    color: #171d1e; /* N-10 */
 }
 
 /* Media queries for fonts */
@@ -224,7 +375,7 @@ h3 {
     }
 
     h3 {
-        font-size: 1.0625em; /* 17px */
+        font-size: 1em; /* 16px */
     }
 }
 
@@ -238,7 +389,7 @@ h3 {
     }
 
     h3 {
-        font-size: 1.125em; /* 18 px */
+        font-size: 1.0625em; /* 17px */
     }
 }
 
@@ -252,7 +403,7 @@ h3 {
     }
 
     h3 {
-        font-size: 1.1875em; /* 19px */
+        font-size: 1.125em; /* 18 px */
     }
 }
 
@@ -266,6 +417,6 @@ h3 {
     }
 
     h3 {
-        font-size: 1.25em; /* 20px */
+        font-size: 1.1875em; /* 19px */
     }
 }
