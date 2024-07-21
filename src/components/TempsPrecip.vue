@@ -21,6 +21,9 @@ const loadShow = ref(false);
 const errorShow = ref(false);
 const errorMsg = ref();
 
+const displayHeat = ref(true);
+const displayPrecip = ref(false);
+
 // On mount, check if data is in local storage from previous visit.
 // If no, fetch data from NOAA. If yes, get data from local storage.
 onMounted(() => {
@@ -76,7 +79,7 @@ function fetchWeatherData() {
     const decades = ["year1970s", "year1980s", "year1990s", "year2000s", "year2010s"];
     Promise.all(decades.map((decade) => {
         fetch(`/${decade}`) // Using locally -> http://localhost:4040/${decade}
-            .then((response) => {
+            .then((response) => { // Using remotely -> /${decade}
                 if (response.ok) {
                     return response.json();
                 } else {
@@ -332,7 +335,7 @@ function createPrecipChart() {
                     labels: {
                         font: {
                             size: 14,
-                            family: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                            family: "'Helvetica Neue', Helvetica, Arial, sans-serif"
                         }
                     }
                 }
@@ -345,12 +348,40 @@ function createPrecipChart() {
         }
     });
 }
+
+function updateChartDisplay(chart) {
+    if (chart === "heat") {
+        displayHeat.value = true;
+        displayPrecip.value = false;
+    }
+
+    if (chart === "precip") {
+        displayPrecip.value = true;
+        displayHeat.value = false;
+    }
+}
 </script>
 
 <template>
-    <div class="chart">
-        <div class="chart-desc">
-            <h3>Annual hot days, 90&deg; F or above</h3>
+    <div class="chart-container">
+        <nav>
+            <button
+                @click="updateChartDisplay('heat')"
+                @keyup.enter="updateChartDisplay('heat')"
+                :class="{ selected: displayHeat }"
+            >
+                Heat
+            </button>
+            <button
+                @click="updateChartDisplay('precip')"
+                @keyup.enter="updateChartDisplay('precip')"
+                :class="{ selected: displayPrecip }"
+            >
+                Precipitation
+            </button>
+        </nav>
+
+        <div class="loading-container">
             <p
                 v-if="loadShow === true"
                 class="load-msg"
@@ -364,14 +395,15 @@ function createPrecipChart() {
                 {{ errorMsg }}
             </p>
         </div>
-        <canvas id="calif-temps-chart"></canvas>
-    </div>
 
-    <div class="chart">
-        <div class="chart-desc">
-            <h3>Annual precipitation, inches</h3>
+        <div class="chart">
+            <div class="chart-desc">
+                <h3 v-show="displayHeat">Days 90&deg; F or above</h3>
+                <h3 v-show="displayPrecip">Precipitation in inches</h3>
+            </div>
+            <canvas id="calif-temps-chart" v-show="displayHeat"></canvas>
+            <canvas id="calif-precip-chart" v-show="displayPrecip"></canvas>
         </div>
-        <canvas id="calif-precip-chart"></canvas>
     </div>
 </template>
 
