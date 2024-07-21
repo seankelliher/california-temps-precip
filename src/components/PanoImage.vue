@@ -4,7 +4,7 @@
 <template>
     <div class="pano">
         <div class="pano-headline">
-            <h1>Rain, Snow, Heat, and California Dreamin'</h1>
+            <h1>50 Years of Heat, Rain, &amp; Snow in California</h1>
         </div>
 
         <figure class="pano-img">
