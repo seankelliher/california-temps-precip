@@ -1,7 +1,7 @@
 [![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/california-temps-precip?style=flat-square)](/LICENSE.txt)
 ## California Temperatures & Precipitation
 
-Dynamically generated charts that display historical weather data from six locations across California. The interface utilizes NOAA's API to 50 years of weather data. It then sorts and compiles the data into statistics and populates a chart with them. The first chart displays the number of days each year with temperature over 90 degrees F. The second chart displays annual precipitation in inches. Built with Vue.js and Express.js. The Express server is used mainly to hide the API's access token in an environmental variable. Fetched data is stored locally to reduce calls to the server. [View working component](https://california-temps-precip-51abd5847179.herokuapp.com). **"Eco" dyno, takes a few seconds to wake up.** 
+Dynamically generated charts that display 50 years of weather data from six locations across California. Data is gathered using NOAA's API. Next, it is compiled into statistics that are used to generate the charts. The first chart displays the number of days each year with temperature over 90 degrees F. The second chart displays annual precipitation in inches. Built with Vue.js and Express.js. The Express server is used mainly to hide the API's access token in an environmental variable. Fetched data is stored locally to reduce calls to the server. [View working component](https://california-temps-precip-51abd5847179.herokuapp.com). **"Eco" dyno, takes a few seconds to wake up.** 
 
 ## Project Status
 
@@ -12,11 +12,14 @@ Project meets general accessibility (WACG) and cross-browser requirements. More 
 * Opening screen
 ![screen shot of project](/screenshots/california-temps-precip-screenshot1.png?s=600)
 
-* Intro text and locations map
+* About project text
 ![screen shot of project](/screenshots/california-temps-precip-screenshot2.png?s=600)
 
-* Precipitation chart
+* Locations map, chart intro
 ![screen shot of project](/screenshots/california-temps-precip-screenshot3.png?s=600)
+
+* Heat chart
+![screen shot of project](/screenshots/california-temps-precip-screenshot4.png?s=600)
 
 ## Installation and Setup Instructions
 
