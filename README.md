@@ -1,7 +1,7 @@
 [![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/california-temps-precip?style=flat-square)](/LICENSE.txt)
 ## California Temperatures & Precipitation
 
-Charts that display data on precipitation and excessive heat in six cities in California, 1970 - 2020. The cities are San Diego, Los Angeles, Bakersfield, Fresno, Stockton, and Eureka. These sites were chosen because they represent different regions of California, and had complete data. Built with Vue.js, Mapbox, and Chart.js. [View working component](https://california-temps-precip-51abd5847179.herokuapp.com). **"Eco" dyno, takes a few seconds to wake up.** 
+Dynamically generated charts that display historical weather data from six locations across California. The interface utilizes NOAA's API to 50 years of weather data. It then sorts and compiles the data into statistics and populates a chart with them. The first chart displays the number of days each year with temperature over 90 degrees F. The second chart displays annual precipitation in inches. Built with Vue.js and Express.js. The Express server is used mainly to hide the API's access token in an environmental variable. Fetched data is stored locally to reduce calls to the server. [View working component](https://california-temps-precip-51abd5847179.herokuapp.com). **"Eco" dyno, takes a few seconds to wake up.** 
 
 ## Project Status
 
@@ -37,10 +37,6 @@ To Start the Express server:
 To Visit App:
 
 Visit the localhost port displayed in the terminal after running `npm run dev`. You may need to disable your browser's Cross-Origin Restrictions.
-
-## Reflection
-
-I wanted to build several charts that examined precipitation and heat in California over the past five decades. This involved a number of challenges. Finding what data NOAA keeps took time. Finding complete data was also difficult. Few stations had complete data for the past 50 years. Next, I needed to learn NOAA's API and how Chart.js worked. This was okay. Both had decent documentation, but much testing was still required to figure out details.
 
 ## Acknowledgments
 
