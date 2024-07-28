@@ -38,7 +38,7 @@ img {
 .pano-img {
     width: 100vw;
     height: 100vh;
-    background-image: url("/winding-road-big-sur-robson-morgan.jpg");
+    background-image: url("/seascape-beach-resort-tony-webster.jpg");
     background-size: cover;
     position: absolute;
     left: 50%;
@@ -334,20 +334,12 @@ p {
     color: #171d1e; /* N-10 */
 }
 
-.load-msg {
-    color: #006874; /* T-40 */
-}
-
-.error-msg {
-    color: #ba1a1a; /* E-40 */
-}
-
 h1 {
     font-family: Georgia, serif;
     line-height: 1.8;
     font-weight: 600;
     font-style: italic;
-    color: #171d1e; /* N-10 */
+    color: #fff; /* N-100 */
 }
 
 h2 {
