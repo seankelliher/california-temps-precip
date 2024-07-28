@@ -9,7 +9,7 @@
 
             <p>The National Oceanic and Atmospheric Administration (NOAA) maintains weather stations across the United States and tracks daily weather conditions. As official as this sounds, weather stations are frequently maintained by volunteers and it's difficult to find ones with continuous records for long spans of time.</p>
 
-            <p>We selected six sites &mdash; San Diego, Los Angeles, Bakersfield, Fresno, Stockton, and Eureka &mdash; for two reasons. They had continuous records for a 50-year span &mdash; the first day of 1970 through the last day of 2019. And, they are spread across the state of California, spanning north to south.</p>
+            <p>We selected six sites: San Diego, Los Angeles, Bakersfield, Fresno, Stockton, and Eureka. They had continuous records for a 50-year span and are spread across the state of California, spanning north to south.</p>
         </div>
 
         <!-- Mapbox token restricted to single URL -->
