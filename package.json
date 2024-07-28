@@ -1,17 +1,15 @@
 {
-    "name": "california-temps-precip-redo",
+    "name": "california-temps-precip",
     "private": true,
     "version": "0.0.0",
     "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview",
-        "start": "node server.js"
+        "preview": "vite preview"
     },
     "dependencies": {
         "chart.js": "^4.4.1",
-        "express": "^4.18.2",
         "vue": "^3.3.8"
     },
     "devDependencies": {
