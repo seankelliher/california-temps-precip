@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted, watch } from "vue";
-import { yearsList } from "../composables/store.js";
+import { ref, onMounted } from "vue";
+import { yearsList, weatherData } from "../composables/store.js";
 import Chart from "chart.js/auto";
 
 const sanDiegoTemps = ref([]);
@@ -16,130 +16,28 @@ const stocktonPrecip = ref([]);
 const eurekaTemps = ref([]); 
 const eurekaPrecip = ref([]);
 
-const tally = ref(0);
-const loadShow = ref(false);
-const errorShow = ref(false);
-const errorMsg = ref();
-
 const displayHeat = ref(true);
 const displayPrecip = ref(false);
 
-// On mount, check if data is in local storage from previous visit.
-// If no, fetch data from NOAA. If yes, get data from local storage.
+
 onMounted(() => {
-    if (!localStorage.getItem("caTempsPrecip")) {
-        fetchWeatherData();
-        loadShow.value = true;
-        console.log("fetching data from NOAA");
-    } else {
-        sanDiegoTemps.value = JSON.parse(localStorage.getItem("sanDiegoTemps"));
-        sanDiegoPrecip.value = JSON.parse(localStorage.getItem("sanDiegoPrecip"));
-        losAngelosTemps.value = JSON.parse(localStorage.getItem("losAngelosTemps"));
-        losAngelosPrecip.value = JSON.parse(localStorage.getItem("losAngelosPrecip"));
-        bakersfieldTemps.value = JSON.parse(localStorage.getItem("bakersfieldTemps"));
-        bakersfieldPrecip.value = JSON.parse(localStorage.getItem("bakersfieldPrecip"));
-        fresnoTemps.value = JSON.parse(localStorage.getItem("fresnoTemps"));
-        fresnoPrecip.value = JSON.parse(localStorage.getItem("fresnoPrecip"));
-        stocktonTemps.value = JSON.parse(localStorage.getItem("stocktonTemps"));
-        stocktonPrecip.value = JSON.parse(localStorage.getItem("stocktonPrecip"));
-        eurekaTemps.value = JSON.parse(localStorage.getItem("eurekaTemps"));
-        eurekaPrecip.value = JSON.parse(localStorage.getItem("eurekaPrecip"));
-        createTempsChart();
-        createPrecipChart();
-        console.log("using data from local storage");
+    for (const item in weatherData) {
+        bakersfieldTemps.value.push(weatherData[item].bakersfieldTemps);
+        bakersfieldPrecip.value.push(weatherData[item].bakersfieldPrecip);
+        eurekaTemps.value.push(weatherData[item].eurekaTemps);
+        eurekaPrecip.value.push(weatherData[item].eurekaPrecip);
+        fresnoTemps.value.push(weatherData[item].fresnoTemps);
+        fresnoPrecip.value.push(weatherData[item].fresnoPrecip);
+        losAngelosTemps.value.push(weatherData[item].losAngelosTemps);
+        losAngelosPrecip.value.push(weatherData[item].losAngelosPrecip);
+        sanDiegoTemps.value.push(weatherData[item].sanDiegoTemps);
+        sanDiegoPrecip.value.push(weatherData[item].sanDiegoPrecip);
+        stocktonTemps.value.push(weatherData[item].stocktonTemps);
+        stocktonPrecip.value.push(weatherData[item].stocktonPrecip);
     }
+    createTempsChart();
+    createPrecipChart();
 });
-
-// If fetching data from NOAA (fetchWeatherData function), watch tally.
-// When all five decades fetched and sorted, put results in local storage.
-watch(tally, (newValue) => {
-    if (newValue === 5) {
-        loadShow.value = false;
-        createTempsChart();
-        createPrecipChart();
-
-        localStorage.setItem("sanDiegoTemps", JSON.stringify(sanDiegoTemps.value ));
-        localStorage.setItem("sanDiegoPrecip", JSON.stringify(sanDiegoPrecip.value));
-        localStorage.setItem("losAngelosTemps", JSON.stringify(losAngelosTemps.value));
-        localStorage.setItem("losAngelosPrecip", JSON.stringify(losAngelosPrecip.value));
-        localStorage.setItem("bakersfieldTemps", JSON.stringify(bakersfieldTemps.value));
-        localStorage.setItem("bakersfieldPrecip", JSON.stringify(bakersfieldPrecip.value));
-        localStorage.setItem("fresnoTemps", JSON.stringify(fresnoTemps.value));
-        localStorage.setItem("fresnoPrecip", JSON.stringify(fresnoPrecip.value));
-        localStorage.setItem("stocktonTemps", JSON.stringify(stocktonTemps.value));
-        localStorage.setItem("stocktonPrecip", JSON.stringify(stocktonPrecip.value));
-        localStorage.setItem("eurekaTemps", JSON.stringify(eurekaTemps.value)); 
-        localStorage.setItem("eurekaPrecip", JSON.stringify(eurekaPrecip.value));
-        localStorage.setItem("caTempsPrecip", "all set");
-    }
-});
-
-// Function to fetch and sort data from NOAA. Sorts results into arrays.
-function fetchWeatherData() {
-    const decades = ["year1970s", "year1980s", "year1990s", "year2000s", "year2010s"];
-    Promise.all(decades.map((decade) => {
-        fetch(`/${decade}`) // Using locally -> http://localhost:4040/${decade}
-            .then((response) => { // Using remotely -> /${decade}
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    return Promise.reject(`Error: ${response.status}. Please wait a few seconds and try refreshing your browser.`);
-                }
-            })
-            .then((data) => {
-                data.results.forEach(function (dr) {
-                    const position = Number(dr.date.substring(0, 4) - 1970);
-
-                    if (dr.station === "GHCND:USW00023188") {
-                        if (dr.datatype === "DX90") {
-                            sanDiegoTemps.value[`${position}`] = dr.value;
-                        } else if (dr.datatype === "PRCP") {
-                            sanDiegoPrecip.value[`${position}`] = dr.value;
-                        }
-                    } else if (dr.station === "GHCND:USW00023174") {
-                        if (dr.datatype === "DX90") {
-                            losAngelosTemps.value[`${position}`] = dr.value;
-                        } else if (dr.datatype === "PRCP") {
-                            losAngelosPrecip.value[`${position}`] = dr.value;
-                        }
-                    } else if (dr.station === "GHCND:USW00023155") {
-                        if (dr.datatype === "DX90") {
-                            bakersfieldTemps.value[`${position}`] = dr.value;
-                        } else if (dr.datatype === "PRCP") {
-                            bakersfieldPrecip.value[`${position}`] = dr.value;
-                        }
-                    } else if (dr.station === "GHCND:USW00093193") {
-                        if (dr.datatype === "DX90") {
-                            fresnoTemps.value[`${position}`] = dr.value;
-                        } else if (dr.datatype === "PRCP") {
-                            fresnoPrecip.value[`${position}`] = dr.value;
-                        }
-                    } else if (dr.station === "GHCND:USW00023237") {
-                        if (dr.datatype === "DX90") {
-                            stocktonTemps.value[`${position}`] = dr.value;
-                        } else if (dr.datatype === "PRCP") {
-                            stocktonPrecip.value[`${position}`] = dr.value;
-                        }
-                    } else if (dr.station === "GHCND:USW00024213") {
-                        if (dr.datatype === "DX90") {
-                            eurekaTemps.value[`${position}`] = dr.value;
-                        } else if (dr.datatype === "PRCP") {
-                            eurekaPrecip.value[`${position}`] = dr.value;
-                        }
-                    }
-                });
-            })
-            .then(() => {
-                tally.value = tally.value + 1;
-                console.log(tally.value);
-            })
-            .catch((error) => {
-                errorMsg.value = error;
-                errorShow.value = true;
-                loadShow.value = false;
-            });
-    }));
-}
 
 // Function to create a chart with Chart.js.
 function createTempsChart() {
@@ -349,6 +247,7 @@ function createPrecipChart() {
     });
 }
 
+// Updates which chart is displayed when user clicks tab.
 function updateChartDisplay(chart) {
     if (chart === "heat") {
         displayHeat.value = true;
@@ -380,21 +279,6 @@ function updateChartDisplay(chart) {
                 Precipitation
             </button>
         </nav>
-
-        <div class="loading-container">
-            <p
-                v-if="loadShow === true"
-                class="load-msg"
-            >
-                Data coming from NOAA. Thanks for your patience.
-            </p>
-            <p
-                v-if="errorShow === true"
-                class="error-msg"
-            >
-                {{ errorMsg }}
-            </p>
-        </div>
 
         <div class="chart">
             <div class="chart-desc">
