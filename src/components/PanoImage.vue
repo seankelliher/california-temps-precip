@@ -4,7 +4,7 @@
 <template>
     <div class="pano">
         <div class="pano-headline">
-            <h1>50 Years of Heat, Rain, &amp; Snow in California</h1>
+            <h1>50 Years of Weather in California</h1>
         </div>
 
         <figure class="pano-img">
@@ -13,7 +13,7 @@
         </figure>
     </div>
 
-    <div class="pano-caption">A lone driver navigates the Cabrillo Highway in Big Sur, California. Photo: <a href="https://commons.wikimedia.org/wiki/File:Winding_road_near_the_seaside_in_Big_Sur_(Unsplash).jpg" target="_blank">Robson Hatsukami Morgan</a>.</div>
+    <div class="pano-caption">The grounds and ocean at the Seascape Beach Resort in Aptos, California. Photo: <a href="https://commons.wikimedia.org/wiki/File:Seascape_Beach_Resort_California_6133028455_o.jpg" target="_blank">Tony Webster</a>.</div>
 </template>
 
 <style scoped>
