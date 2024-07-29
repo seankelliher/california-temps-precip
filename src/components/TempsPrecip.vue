@@ -282,7 +282,7 @@ function updateChartDisplay(chart) {
 
         <div class="chart">
             <div class="chart-desc">
-                <h3 v-show="displayHeat">Days 90&deg; F or above</h3>
+                <h3 v-show="displayHeat">Days above 90&deg; F</h3>
                 <h3 v-show="displayPrecip">Precipitation in inches</h3>
             </div>
             <canvas id="calif-temps-chart" v-show="displayHeat"></canvas>

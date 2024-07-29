@@ -1,7 +1,7 @@
 [![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/california-temps-precip?style=flat-square)](/LICENSE.txt)
 ## California Temperatures & Precipitation
 
-Charts that display 50 years of weather data from six locations across California: (1) the number of days each year with temperature over 90 degrees F, and (2) the annual precipitation in inches. Built with Vue.js, Chart.js, and Mapbox. [View working component](https://sean-kelliher-california-temps-precip.netlify.app).
+Charts that display 50 years of weather data from six locations across California: (1) the number of days with maximum temperature greater than 90 degrees Fahrenheit, and (2) the annual precipitation in inches. Built with Vue.js, Chart.js, and Mapbox. [View working component](https://sean-kelliher-california-temps-precip.netlify.app).
 
 ## Project Status
 

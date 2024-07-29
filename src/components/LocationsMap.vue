@@ -20,7 +20,7 @@
 
         <div class="text">
             <h2>Charts</h2>
-            <p>The charts below display some of the stations' data. The "heat" chart displays the annual number of days where the temperature reached 90 degrees Fahrenheit or above. The "precipitation" chart displays the annual precipitation in inches. They let readers explore California's changing climate.</p>
+            <p>The charts below display some of the stations' data. The "heat" chart displays the number of days with maximum temperature greater than 90 degrees Fahrenheit. The "precipitation" chart displays the annual precipitation in inches. They let readers explore California's changing climate.</p>
         </div>
     </section>
 </template>

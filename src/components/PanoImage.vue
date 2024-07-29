@@ -9,7 +9,7 @@
 
         <figure class="pano-img">
             <!-- image added as background img -->
-            <figcaption hidden>Winding road near the sea in Big Sur, California.</figcaption>
+            <figcaption hidden>Lush green grass and ocean at the Seascape Beach Resort.</figcaption>
         </figure>
     </div>
 
