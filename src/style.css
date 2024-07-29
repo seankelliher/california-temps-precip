@@ -88,14 +88,7 @@ section {
 }
 
 @media (min-width: 300px) and (max-width: 599px) {
-    .text {
-        width: 100%;
-        margin: 1em 0;
-        padding: 0;
-        flex: initial;
-    }
-
-    .map {
+    .text, .map {
         width: 100%;
         margin: 1em 0;
         padding: 0;
@@ -104,106 +97,53 @@ section {
 }
 
 @media (min-width: 600px) and (max-width: 699px) {
-    .text {
+    .text, .map {
         width: 95%;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        padding: 0;
-        flex: initial;
-    }
-
-    .map {
-        width: 85%;
-        margin-top: 1em;
-        margin-bottom: 1em;
+        margin: 0 2.5%;
         padding: 0;
         flex: initial;
     }
 }
 
 @media (min-width: 700px) and (max-width: 799px) {
-    .text {
+    .text, .map {
         width: 85%;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        padding: 0;
-        flex: initial;
-    }
-
-    .map {
-        width: 75%;
-        margin-top: 1em;
-        margin-bottom: 1em;
+        margin: 1em 5%;
         padding: 0;
         flex: initial;
     }
 }
 
 @media (min-width: 800px) and (max-width: 899px) {
-    .text {
+    .text, .map {
         width: 75%;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        padding: 0;
-        flex: initial;
-    }
-
-    .map {
-        width: 65%;
-        margin-top: 1em;
-        margin-bottom: 1em;
+        margin: 1em 5%;
         padding: 0;
         flex: initial;
     }
 }
 
 @media (min-width: 900px) and (max-width: 999px) {
-    .text {
+    .text, .map {
         width: 70%;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        padding: 0;
-        flex: initial;
-    }
-
-    .map {
-        width: 60%;
-        margin-top: 1em;
-        margin-bottom: 1em;
+        margin: 1em 5%;
         padding: 0;
         flex: initial;
     }
 }
 
 @media (min-width: 1000px) and (max-width: 1099px) {
-    .text {
-        width: 64%;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        padding: 0;
-        flex: initial;
-    }
-
-    .map {
-        width: 54%;
-        margin-top: 1em;
-        margin-bottom: 1em;
+    .text, .map {
+        width: 65%;
+        margin: 1em 5%;
         padding: 0;
         flex: initial;
     }
 }
 
 @media (min-width: 1100px) and (max-width: 1199px) {
-    .text {
+    .text, .map {
         width: 60%;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        padding: 0;
-        flex: initial;
-    }
-
-    .map {
-        width: 50%;
         margin: 1em 5%;
         padding: 0;
         flex: initial;
@@ -211,15 +151,8 @@ section {
 }
 
 @media (min-width: 1200px) {
-    .text {
+    .text, .map {
         width: 55%;
-        margin: 1em 5%;
-        padding: 0;
-        flex: initial;
-    }
-
-    .map {
-        width: 45%;
         margin: 1em 5%;
         padding: 0;
         flex: initial;
@@ -228,7 +161,7 @@ section {
 
 .chart-container {
     width: 90%;
-    margin: 0;
+    margin: 0 0 2em 0;
     padding: 2em 5%;
     background: #eff5f6; /* N-96 */
     flex: initial;
@@ -259,7 +192,6 @@ nav {
 }
 
 button {
-    /* width: 100px; */
     margin-right: 2.5%;
     padding: 0;
     background: transparent;
@@ -283,13 +215,6 @@ button:hover {
 
 .selected {
     border-bottom: 2px solid #37618e; /* P-40 */
-}
-
-.loading-container {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    flex: initial;
 }
 
 .chart {
@@ -328,7 +253,6 @@ figcaption {
 
 p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.125em; /* 18 px */
     line-height: 1.8;
     font-weight: 400;
     color: #171d1e; /* N-10 */
@@ -358,6 +282,10 @@ h3 {
 
 /* Media queries for fonts */
 @media (min-width: 300px) and (max-width: 399px) {
+    p {
+        font-size: 1.125em; /* 18 px */
+    }
+
     h1 {
         font-size: 1.3125em; /* 21px */
     }
@@ -372,6 +300,10 @@ h3 {
 }
 
 @media (min-width: 400px) and (max-width: 499px) {
+    p {
+        font-size: 1.125em; /* 18 px */
+    }
+
     h1 {
         font-size: 1.375em; /* 22px */
     }
@@ -386,6 +318,10 @@ h3 {
 }
 
 @media (min-width: 500px) and (max-width: 599px) {
+    p {
+        font-size: 1.1875em; /* 19px */
+    }
+
     h1 {
         font-size: 1.4375em; /* 23px */
     }
@@ -400,6 +336,10 @@ h3 {
 }
 
 @media (min-width: 600px) {
+    p {
+        font-size: 1.25em; /* 20px */
+    }
+
     h1 {
         font-size: 1.5em; /* 24px */
     }
