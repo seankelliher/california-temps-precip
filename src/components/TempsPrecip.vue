@@ -104,9 +104,6 @@ function createTempsChart() {
                             return value;
                         }
                     }
-                },
-                y: {
-                    beginAtZero: true
                 }
             },
             plugins: {
