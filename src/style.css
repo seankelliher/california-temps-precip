@@ -178,6 +178,15 @@ section {
     z-index: -1;
 }
 
+.chart-caption {
+    width: 100%;
+    padding: 0.5em 0;
+    font-size: 1em; /* 16px */
+    line-height: 1.5;
+    color: #2b3133; /* N-20 */
+    flex: initial;
+}
+
 nav {
     width: 100%;
     margin: 0;
@@ -362,7 +371,30 @@ h3 {
     "GRAD" 0;
 }
 
+/* GOOGLE Fonts: Font-family roboto-flex, variable weight font, 100 to 1000 */
+.roboto-flex {
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712;
+}
+
 /* Font-weight */
+.three {
+    font-weight:  300;
+}
+
 .four {
     font-weight:  400;
 }
