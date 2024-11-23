@@ -38,7 +38,7 @@ img {
 .pano-img {
     width: 100vw;
     height: 100vh;
-    background-image: url("/seascape-beach-resort-tony-webster.jpg");
+    background-image: url("/malibu-surfer-terrell-woods.jpg");
     background-size: cover;
     position: absolute;
     left: 50%;
@@ -59,10 +59,8 @@ img {
 .pano-caption {
     width: 90%;
     padding: 0.5em 5%;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em; /* 16px */
     line-height: 1.5;
-    font-weight: 400;
     color: #2b3133; /* N-20 */
     flex: initial;
 }
@@ -161,7 +159,7 @@ section {
 
 .chart-container {
     width: 90%;
-    margin: 0 0 2em 0;
+    margin: 0 0 2em; /* Longhand 0 0 2em 0 */
     padding: 2em 5%;
     background: #eff5f6; /* N-96 */
     flex: initial;
@@ -196,10 +194,8 @@ button {
     padding: 0;
     background: transparent;
     border: none;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 0.875em; /* 14px */
     line-height: 1.5;
-    font-weight: 500;
     color: #37618e; /* P-40 */
 }
 
@@ -244,39 +240,28 @@ canvas {
 
 /* Font styles and their media queries */
 figcaption {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em; /* 16px */
     line-height: 1.5;
-    font-weight: 400;
     color: #2b3133; /* N-20 */
 }
 
 p {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.8;
-    font-weight: 400;
     color: #171d1e; /* N-10 */
 }
 
 h1 {
-    font-family: Georgia, serif;
-    line-height: 1.8;
-    font-weight: 600;
-    font-style: italic;
-    color: #fff; /* N-100 */
+    line-height: 1.4;
+    color: #000;
 }
 
 h2 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.8;
-    font-weight: 600;
     color: #171d1e; /* N-10 */
 }
 
 h3 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.2;
-    font-weight: 500;
     color: #171d1e; /* N-10 */
 }
 
@@ -351,4 +336,37 @@ h3 {
     h3 {
         font-size: 1.1875em; /* 19px */
     }
+}
+
+/* GOOGLE Fonts: Font-family bevan-regular */
+.bevan-regular {
+  font-family: Bevan, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Currently not used */
+.bevan-regular-italic {
+  font-family: Bevan, serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* GOOGLE Fonts: Font-family roboto-serif, variable weight font, 100 to 900 */
+.roboto-serif {
+  font-family: "Roboto Serif", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "GRAD" 0;
+}
+
+/* Font-weight */
+.four {
+    font-weight:  400;
+}
+
+.six {
+    font-weight:  600;
 }
