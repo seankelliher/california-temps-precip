@@ -296,6 +296,7 @@ function updateChartDisplay(chart) {
             </div>
             <canvas id="calif-temps-chart" v-show="displayHeat"></canvas>
             <canvas id="calif-precip-chart" v-show="displayPrecip"></canvas>
+            <div class="chart-caption roboto-flex three">Data from the National Oceanic and Atmospheric Administration (NOAA)</div>
         </div>
     </div>
 </template>
