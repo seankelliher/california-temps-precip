@@ -4,16 +4,16 @@
 <template>
     <div class="pano">
         <div class="pano-headline">
-            <h1>50 Years of Weather in California</h1>
+            <h1 class="bevan-regular">50 Years of Weather in California</h1>
         </div>
 
         <figure class="pano-img">
             <!-- image added as background img -->
-            <figcaption hidden>Lush green grass and ocean at the Seascape Beach Resort.</figcaption>
+            <figcaption hidden>female surfer in wetsuit wades into the waves</figcaption>
         </figure>
     </div>
 
-    <div class="pano-caption">The grounds and ocean at the Seascape Beach Resort in Aptos, California. Photo: <a href="https://commons.wikimedia.org/wiki/File:Seascape_Beach_Resort_California_6133028455_o.jpg" target="_blank">Tony Webster</a>.</div>
+    <div class="pano-caption roboto-serif four">Catching waves in Malibu, California. Photo: <a href="https://commons.wikimedia.org/wiki/File:Malibu_surfer_at_sea_(Unsplash).jpg" target="_blank">Terrell Woods</a>.</div>
 </template>
 
 <style scoped>

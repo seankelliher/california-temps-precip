@@ -265,6 +265,7 @@ function updateChartDisplay(chart) {
                 @click="updateChartDisplay('heat')"
                 @keyup.enter="updateChartDisplay('heat')"
                 :class="{ selected: displayHeat }"
+                class="bevan-regular"
             >
                 Heat
             </button>
@@ -272,6 +273,7 @@ function updateChartDisplay(chart) {
                 @click="updateChartDisplay('precip')"
                 @keyup.enter="updateChartDisplay('precip')"
                 :class="{ selected: displayPrecip }"
+                class="bevan-regular"
             >
                 Precipitation
             </button>
@@ -279,8 +281,18 @@ function updateChartDisplay(chart) {
 
         <div class="chart">
             <div class="chart-desc">
-                <h3 v-show="displayHeat">Days above 90&deg; F</h3>
-                <h3 v-show="displayPrecip">Precipitation in inches</h3>
+                <h3
+                    v-show="displayHeat"
+                    class="bevan-regular"
+                >
+                    Days above 90&deg; F
+                </h3>
+                <h3
+                    v-show="displayPrecip"
+                    class="bevan-regular"
+                >
+                    Precipitation in inches
+                </h3>
             </div>
             <canvas id="calif-temps-chart" v-show="displayHeat"></canvas>
             <canvas id="calif-precip-chart" v-show="displayPrecip"></canvas>
