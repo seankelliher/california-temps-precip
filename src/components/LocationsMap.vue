@@ -5,11 +5,47 @@
     <section>
         <div class="text">
             <h2 class="bevan-regular">Changing Times</h2>
-            <p class="roboto-serif four">The allure of the Golden State has diminished in recent years. Wildfires and hardships from drought are now undeniable features of daily life. At the root of both afflictions are excessive heat and lack of precipitation. We reviewed data to see how both have changed over the past 50 years.</p>
+            <p class="roboto-serif four">The allure of the Golden State has diminished in recent years with wildfires and drought now undeniable features of daily life. At the root of both afflictions are excessive heat and lack of precipitation. We reviewed data to see how both have changed over the past 50 years.</p>
 
-            <p class="roboto-serif four">The National Oceanic and Atmospheric Administration (NOAA) maintains weather stations across the United States and tracks daily weather conditions. As official as this sounds, weather stations are frequently maintained by volunteers and it's difficult to find ones with continuous records for long spans of time.</p>
+            <p class="roboto-serif four">The National Oceanic and Atmospheric Administration (NOAA) maintains weather stations across the United States and tracks daily weather conditions.</p>
+        </div>
 
-            <p class="roboto-serif four">We selected six sites: San Diego, Los Angeles, Bakersfield, Fresno, Stockton, and Eureka. They had continuous records for a 50-year span and are spread across the state of California, spanning north to south.</p>
+        <div class="thumbs">
+            <figure class="thumb">
+                <img
+                    src="/weather-station-baker-nv.jpg"
+                    alt="weather monitoring equipment among desert scrub"
+                >
+                <figcaption hidden>Weather station in Baker, Nevada</figcaption>
+            </figure>
+            <figure class="thumb">
+                <img
+                    src="/weather-station-elgin-az.jpg"
+                    alt="weather monitoring equipment among grassy desert plain"
+                >
+                <figcaption hidden>Weather station in Elgin, Arizona</figcaption>
+            </figure>
+            <figure class="thumb">
+                <img
+                    src="/weather-station-lander-wy.jpg"
+                    alt="weather monitoring equipment in field of flowering plants"
+                >
+                <figcaption hidden>Weather station in Lander, Wyoming</figcaption>
+            </figure>
+            <figure class="thumb">
+                <img
+                    src="/weather-station-spokane-wa.jpg"
+                    alt="weather monitoring equipment in field of golden grass"
+                >
+                <figcaption hidden>Weather station in Spokane, Washington</figcaption>
+            </figure>
+            <div class="thumbs-caption roboto-serif four">Weather stations around the US: (top row) Baker, Nevada; Elgin, Arizona; (bottom row) Lander, Wyoming; Spokane, Washington. Photos: NOAA</div>
+        </div>
+
+        <div class="text">
+            <p class="roboto-serif four">As official as this sounds, weather stations are frequently maintained by volunteers and it's difficult to find ones with continuous records for long spans of time.</p>
+
+            <p class="roboto-serif four">We selected six sites in California: San Diego, Los Angeles, Bakersfield, Fresno, Stockton, and Eureka. They had continuous records for a 50-year span and are spread across the state of California, spanning north to south.</p>
         </div>
 
         <!-- Mapbox token restricted to single URL -->
