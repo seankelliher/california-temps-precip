@@ -4,7 +4,7 @@
 <template>
     <section>
         <div class="text">
-            <h2 class="bevan-regular">How is California weather changing?</h2>
+            <h2 class="bevan-regular">Changing Times</h2>
             <p class="roboto-serif four">The allure of the Golden State has diminished in recent years. Wildfires and hardships from drought are now undeniable features of daily life. At the root of both afflictions are excessive heat and lack of precipitation. We reviewed data to see how both have changed over the past 50 years.</p>
 
             <p class="roboto-serif four">The National Oceanic and Atmospheric Administration (NOAA) maintains weather stations across the United States and tracks daily weather conditions. As official as this sounds, weather stations are frequently maintained by volunteers and it's difficult to find ones with continuous records for long spans of time.</p>
