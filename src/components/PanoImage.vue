@@ -4,12 +4,17 @@
 <template>
     <div class="pano">
         <div class="pano-headline">
-            <h1 class="bevan-regular">50 Years of Weather in California</h1>
+            <h1 class="bevan-regular">California Dreaming?</h1>
+            <p class="sub-headline roboto-serif four">Looking back at 50 years of weather in the Golden State</p>
         </div>
 
-        <figure class="pano-img">
-            <!-- image added as background img -->
-            <figcaption hidden>female surfer in wetsuit wades into the waves</figcaption>
+        <figure class="full-width">
+            <img
+                src="/malibu-surfer-terrell-woods.jpg"
+                alt="female surfer in wetsuit wades into the waves"
+                class="full-width-img"
+            >
+            <figcaption hidden>Surfer in Malibu, California</figcaption>
         </figure>
     </div>
 
