@@ -22,38 +22,55 @@ img {
     align-items: flex-start; /* cross axis */
 }
 
+/* Pano elements */
 .pano {
     width: 100%;
-    min-height: 100vh;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     flex: initial;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start; /* main axis */
-    align-items: flex-start; /* cross axis */
-    position: relative;
 }
 
-.pano-img {
+@media (min-width: 600px) {
+    .pano {
+        position: relative;
+    }
+}
+
+figure.full-width {
     width: 100vw;
-    height: 100vh;
-    background-image: url("/malibu-surfer-terrell-woods.jpg");
-    background-size: cover;
-    position: absolute;
+    margin: 0;
+    padding: 0;
+    position: relative;
     left: 50%;
     right: 50%;
-    margin: 0 -50vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.full-width-img {
+    width: 100vw;
+}
+
+@media (min-width: 960px) {
+    .full-width-img {
+        height: 100vh;
+        object-fit: cover;
+    }
 }
 
 .pano-headline {
     width: 90%;
     padding: 0 5%;
-    position: absolute;
-    top: 5vh;
     flex: initial;
     text-align: center;
-    z-index: 1;
+}
+
+@media (min-width: 600px) {
+    .pano-headline {
+        position: absolute;
+        top: 1em;
+        z-index: 1;
+    }
 }
 
 .pano-caption {
@@ -74,6 +91,7 @@ img {
     text-decoration: underline;
 }
 
+/* Content elements */
 section {
     width: 90%;
     margin: 1em 0;
@@ -157,6 +175,7 @@ section {
     }
 }
 
+/* Chart elements */
 .chart-container {
     width: 90%;
     margin: 0 0 2em; /* Longhand 0 0 2em 0 */
@@ -259,13 +278,21 @@ p {
     color: #171d1e; /* N-10 */
 }
 
-h1 {
-    line-height: 1.4;
+/* Used with "p" tag in pano-headline */
+.sub-headline {
+    line-height: 1.5;
     color: #000;
+    margin-top: 0;
+}
+
+h1 {
+    line-height: 1.5;
+    color: #000;
+    margin-bottom: 0;
 }
 
 h2 {
-    line-height: 1.8;
+    line-height: 1.5;
     color: #171d1e; /* N-10 */
 }
 
@@ -345,6 +372,7 @@ h3 {
     h3 {
         font-size: 1.1875em; /* 19px */
     }
+
 }
 
 /* GOOGLE Fonts: Font-family bevan-regular */
