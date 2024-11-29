@@ -3,10 +3,10 @@
 
 <template>
     <div class="pano">
-        <div class="pano-headline">
+        <hgroup class="pano-headline">
             <h1 class="bevan-regular">California Dreaming?</h1>
             <p class="sub-headline roboto-serif four">Looking back at 50 years of weather in the Golden State</p>
-        </div>
+        </hgroup>
 
         <figure class="full-width">
             <img
