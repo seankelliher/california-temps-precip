@@ -15,10 +15,10 @@ Originally, I built this app to fetch data from NOAA using the agency’s API. B
 * Opening screen
 ![screen shot of project](/screenshots/california-temps-precip-screenshot1.png?s=600)
 
-* About project text
+* About project, weather station photos
 ![screen shot of project](/screenshots/california-temps-precip-screenshot2.png?s=600)
 
-* Locations map
+* Map, stations in California
 ![screen shot of project](/screenshots/california-temps-precip-screenshot3.png?s=600)
 
 * Heat chart
@@ -44,6 +44,7 @@ Visit the localhost port displayed in the terminal after running `npm run dev`.
 
 * Weather data from the [National Centers for Environmental Information](https://www.ncei.noaa.gov/access/search/data-search/global-summary-of-the-year), part of the National Oceanic and Atmospheric Administration (NOAA).
 * Photo of Malibu surfer [Terrell Woods](https://commons.wikimedia.org/wiki/File:Malibu_surfer_at_sea_(Unsplash).jpg).
+* Photos of weather stations from NOAA. See details at [noaa-stations-images.txt](https://github.com/seankelliher/california-temps-precip/blob/main/notes/noaa-stations-images.txt).
 * Map from [Mapbox](https://docs.mapbox.com/playground/static/).
 * Chart built with [Chart.js](https://www.chartjs.org/docs/latest/).
 * Helpful Chart.js example, by diggidydoge on [Codepen](https://codepen.io/diggitydoge/pen/MWWmgJp?__cf_chl_captcha_tk__=0p_9xAp805KWSEbmYe2FWoI8MrlpQUN_VncDcE8VenI-1637378794-0-gaNycGzNB30).
@@ -51,4 +52,5 @@ Visit the localhost port displayed in the terminal after running `npm run dev`.
 * Linting guidance from [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io).
 * Design guidance from Google's [Material Design](https://material.io/design).
 * Fonts from [Google Fonts](https://fonts.google.com).
+* Fluid typography guidance from [Utopia](https://utopia.fyi).
 * Shields from [Shields](https://shields.io).
