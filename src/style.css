@@ -1,3 +1,12 @@
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1280,18,1.125,3,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+:root {
+    --fs-1: clamp(0.8889rem, 0.8519rem + 0.1852vw, 1rem); /* caption, button */
+    --fs0: clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem); /* p */
+    --fs1: clamp(1.125rem, 1.0781rem + 0.2344vw, 1.2656rem); /* h3 */
+    --fs2: clamp(1.2656rem, 1.2129rem + 0.2637vw, 1.4238rem); /* h2 */
+    --fs3: clamp(1.4238rem, 1.3645rem + 0.2966vw, 1.6018rem); /* h1 */
+}
+
 /* Stylesheet uses Level 3 Media Queries. Level 4 coverage still spotty. */
 body {
     background: #f5fafb; /* N-98 */
@@ -76,18 +85,19 @@ figure.full-width {
 .pano-caption {
     width: 90%;
     padding: 0.5em 5%;
-    font-size: 1em; /* 16px */
+    font-size: var(--fs-1);
     line-height: 1.5;
-    color: #2b3133; /* N-20 */
+    color: #43474e; /* NV-30 */
     flex: initial;
 }
 
 .pano-caption a {
-    color: #2b3133; /* N-20 */
+    color: #43474e; /* NV-30 */
     text-decoration: underline;
 }
 
 .pano-caption a:hover {
+    color: #2c3137; /* NV-20 */
     text-decoration: underline;
 }
 
@@ -129,9 +139,9 @@ figure.thumb {
 .thumbs-caption {
     width: 100%;
     padding: 0.5em 0;
-    font-size: 1em; /* 16px */
+    font-size: var(--fs-1);
     line-height: 1.5;
-    color: #2b3133; /* N-20 */
+    color: #43474e; /* NV-30 */
     flex: initial;
 }
 
@@ -223,9 +233,9 @@ figure.thumb {
 .chart-caption {
     width: 100%;
     padding: 0.5em 0;
-    font-size: 1em; /* 16px */
+    font-size: var(--fs-1);
     line-height: 1.5;
-    color: #2b3133; /* N-20 */
+    color: #43474e; /* NV-30 */
     flex: initial;
 }
 
@@ -245,7 +255,7 @@ button {
     padding: 0;
     background: transparent;
     border: none;
-    font-size: 0.875em; /* 14px */
+    font-size: var(--fs-1);
     line-height: 1.5;
     color: #37618e; /* P-40 */
 }
@@ -291,111 +301,61 @@ canvas {
 
 /* Font styles and their media queries */
 figcaption {
-    font-size: 1em; /* 16px */
+    font-size: var(--fs-1);
     line-height: 1.5;
-    color: #2b3133; /* N-20 */
+    color: #43474e; /* NV-30 */
 }
 
 p {
+    font-size: var(--fs0);
     line-height: 1.8;
     color: #171d1e; /* N-10 */
 }
 
 /* Used with "p" tag in pano-headline */
 .sub-headline {
-    line-height: 1.5;
-    color: #000;
-    margin-top: 0;
+    line-height: 1.2;
+    margin-top: 0.25em;
 }
 
 h1 {
-    line-height: 1.5;
-    color: #000;
-    margin-bottom: 0;
+    font-size: var(--fs3);
+    line-height: 1.2;
+    margin-bottom: 0.25em;
+}
+
+/* On background */
+@media (min-width: 300px) and (max-width: 599px) {
+    h1 {
+        color: #171d1e; /* N-10 */
+    }
+
+    .sub-headline {
+        color: #171d1e; /* N-10 */
+    }
+}
+
+/* On image */
+@media (min-width: 600px) {
+    h1 {
+        color: #000;
+    }
+
+    .sub-headline {
+        color: #000;
+    }
 }
 
 h2 {
-    line-height: 1.5;
-    color: #171d1e; /* N-10 */
-}
-
-h3 {
+    font-size: var(--fs2);
     line-height: 1.2;
     color: #171d1e; /* N-10 */
 }
 
-/* Media queries for fonts */
-@media (min-width: 300px) and (max-width: 399px) {
-    p {
-        font-size: 1.125em; /* 18 px */
-    }
-
-    h1 {
-        font-size: 1.3125em; /* 21px */
-    }
-
-    h2 {
-        font-size: 1.1875em; /* 19px */
-    }
-
-    h3 {
-        font-size: 1em; /* 16px */
-    }
-}
-
-@media (min-width: 400px) and (max-width: 499px) {
-    p {
-        font-size: 1.125em; /* 18 px */
-    }
-
-    h1 {
-        font-size: 1.375em; /* 22px */
-    }
-
-    h2 {
-        font-size: 1.25em; /* 20px */
-    }
-
-    h3 {
-        font-size: 1.0625em; /* 17px */
-    }
-}
-
-@media (min-width: 500px) and (max-width: 599px) {
-    p {
-        font-size: 1.1875em; /* 19px */
-    }
-
-    h1 {
-        font-size: 1.4375em; /* 23px */
-    }
-
-    h2 {
-        font-size: 1.3125em; /* 21px */
-    }
-
-    h3 {
-        font-size: 1.125em; /* 18 px */
-    }
-}
-
-@media (min-width: 600px) {
-    p {
-        font-size: 1.25em; /* 20px */
-    }
-
-    h1 {
-        font-size: 1.5em; /* 24px */
-    }
-
-    h2 {
-        font-size: 1.375em; /* 22px */
-    }
-
-    h3 {
-        font-size: 1.1875em; /* 19px */
-    }
-
+h3 {
+    font-size: var(--fs1);
+    line-height: 1.2;
+    color: #171d1e; /* N-10 */
 }
 
 /* GOOGLE Fonts: Font-family bevan-regular */
