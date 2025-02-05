@@ -50,48 +50,48 @@ function createTempsChart() {
             datasets: [{
                 label: "San Diego",
                 data: sanDiegoTemps.value,
-                backgroundColor: "#039be5", // light blue 600.
-                borderColor: "#039be5",
+                backgroundColor: "#74A60A", // green
+                borderColor: "#74A60A",
                 borderWidth: 1,
                 tension: 0.3
             },
             {
                 label: "Los Angeles",
                 data: losAngelosTemps.value,
-                backgroundColor: "#e53935", // red 600.
-                borderColor: "#e53935",
+                backgroundColor: "#F2C46D", // yellow
+                borderColor: "#F2C46D",
                 borderWidth: 1,
                 tension: 0.3
             },
             {
                 label: "Bakersfield",
                 data: bakersfieldTemps.value,
-                backgroundColor: "#7cb342", // light green 600.
-                borderColor: "#7cb342",
+                backgroundColor: "#F25C05", // orange
+                borderColor: "#F25C05",
                 borderWidth: 1,
                 tension: 0.3
             },
             {
                 label: "Fresno",
                 data: fresnoTemps.value,
-                backgroundColor: "#ffb300", // amber 600.
-                borderColor: "#ffb300",
+                backgroundColor: "#A8B2BF", // grey
+                borderColor: "#A8B2BF",
                 borderWidth: 1,
                 tension: 0.3
             },
             {
                 label: "Stockton",
                 data: stocktonTemps.value,
-                backgroundColor: "#757575", // gray 600.
-                borderColor: "#757575",
+                backgroundColor: "#121B26", // black
+                borderColor: "#121B26",
                 borderWidth: 1,
                 tension: 0.3
             },
             {
                 label: "Eureka",
                 data: eurekaTemps.value,
-                backgroundColor: "#8e24aa", // purple 600.
-                borderColor: "#8e24aa",
+                backgroundColor: "#0A8CBF", // blue
+                borderColor: "#0A8CBF",
                 borderWidth: 1,
                 tension: 0.3
             }]
@@ -151,48 +151,48 @@ function createPrecipChart() {
             datasets: [{
                 label: "San Diego",
                 data: sanDiegoPrecip.value,
-                backgroundColor: "#039be5", // light blue 600.
-                borderColor: "#039be5",
+                backgroundColor: "#74A60A", // green
+                borderColor: "#74A60A",
                 borderWidth: 1,
                 tension: 0.3
             },
             {
                 label: "Los Angeles",
                 data: losAngelosPrecip.value,
-                backgroundColor: "#e53935", // red 600.
-                borderColor: "#e53935",
+                backgroundColor: "#F2C46D", // yellow
+                borderColor: "#F2C46D",
                 borderWidth: 1,
                 tension: 0.3
             },
             {
                 label: "Bakersfield",
                 data: bakersfieldPrecip.value,
-                backgroundColor: "#7cb342", // light green 600.
-                borderColor: "#7cb342",
+                backgroundColor: "#F25C05", // orange
+                borderColor: "#F25C05",
                 borderWidth: 1,
                 tension: 0.3
             },
             {
                 label: "Fresno",
                 data: fresnoPrecip.value,
-                backgroundColor: "#ffb300", // amber 600.
-                borderColor: "#ffb300",
+                backgroundColor: "#A8B2BF", // grey
+                borderColor: "#A8B2BF",
                 borderWidth: 1,
                 tension: 0.3
             },
             {
                 label: "Stockton",
                 data: stocktonPrecip.value,
-                backgroundColor: "#757575", // gray 600.
-                borderColor: "#757575",
+                backgroundColor: "#121B26", // black
+                borderColor: "#121B26",
                 borderWidth: 1,
                 tension: 0.3
             },
             {
                 label: "Eureka",
                 data: eurekaPrecip.value,
-                backgroundColor: "#8e24aa", // purple 600.
-                borderColor: "#8e24aa",
+                backgroundColor: "#0A8CBF", // blue
+                borderColor: "#0A8CBF",
                 borderWidth: 1,
                 tension: 0.3
             }]
