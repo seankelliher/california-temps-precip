@@ -1,5 +1,6 @@
 <script setup>
-import TempsPrecip from "./components/TempsPrecip.vue";
+import TempsPrecipChart from "./components/TempsPrecipChart.vue";
+import TempsPrecipTable from "./components/TempsPrecipTable.vue";
 import PanoImage from "./components/PanoImage.vue";
 import LocationsMap from "./components/LocationsMap.vue";
 </script>
@@ -8,7 +9,8 @@ import LocationsMap from "./components/LocationsMap.vue";
     <div id="container">
         <PanoImage />
         <LocationsMap />
-        <TempsPrecip />
+        <TempsPrecipChart />
+        <TempsPrecipTable />
     </div>
 </template>
 
