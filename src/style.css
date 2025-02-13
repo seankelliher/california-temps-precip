@@ -209,7 +209,7 @@ figure.thumb {
 }
 
 /* Chart elements */
-.chart-container {
+.chart-table-container {
     width: 90%;
     margin: 0 0 2em; /* Longhand 0 0 2em 0 */
     padding: 2em 5%;
@@ -222,7 +222,7 @@ figure.thumb {
     position: relative;
 }
 
-.chart-container::before {
+.chart-table-container::before {
     content: "";
     position: absolute;
     inset: 0 calc((100vw - 100%) / -2) 0 calc((100vw - 100%) / -2);
@@ -230,7 +230,7 @@ figure.thumb {
     z-index: -1;
 }
 
-.chart-caption {
+.chart-table-caption {
     width: 100%;
     padding: 0.5em 0;
     font-size: var(--fs-1);
@@ -274,7 +274,7 @@ button:hover {
     border-bottom: 2px solid #37618e; /* P-40 */
 }
 
-.chart {
+.chart-table {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -285,7 +285,7 @@ button:hover {
     align-items: flex-start; /* cross axis */
 }
 
-.chart-desc {
+.chart-table-desc {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -297,6 +297,68 @@ canvas {
     margin: 0;
     padding: 0;
     flex: initial;
+}
+
+/* Table displays on small screens where chart doesn't work */
+table {
+    width: 100%;
+    margin-bottom: 2em;
+    padding: 0;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+th, tr {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; /* main axis */
+    align-items: flex-start; /* cross axis */
+    border-bottom: 1px solid #c9c6c5; /* N80 */
+}
+
+td {
+    width: 13%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: var(--fs-0);
+    line-height: 1.5;
+    color: #171c1f; /* N-10 */
+}
+
+td:first-child {
+    border-left: none;  
+}
+
+td:last-child {
+    border-right: none;  
+}
+
+@media (min-width: 300px) and (max-width: 599px) {
+    .chart-view {
+        display: none;
+    }
+
+    .table-view {
+        display: flex;
+    }
+}
+
+@media (min-width: 600px) {
+    .chart-view {
+        display: flex;
+    }
+
+    .table-view {
+        display: none;
+    }
 }
 
 /* Font styles and their media queries */
