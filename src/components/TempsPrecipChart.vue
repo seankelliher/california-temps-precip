@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
-import { yearsList, weatherData } from "../composables/store.js";
+import { yearsList, weatherData } from "../data/weather-data.js";
+import { store } from "../composables/store.js";
 import Chart from "chart.js/auto";
 
 const sanDiegoTemps = ref([]);
@@ -15,10 +16,6 @@ const stocktonTemps = ref([]);
 const stocktonPrecip = ref([]);
 const eurekaTemps = ref([]); 
 const eurekaPrecip = ref([]);
-
-const displayHeat = ref(true);
-const displayPrecip = ref(false);
-
 
 onMounted(() => {
     for (const item in weatherData) {
@@ -243,36 +240,23 @@ function createPrecipChart() {
         }
     });
 }
-
-// Updates which chart is displayed when user clicks tab.
-function updateChartDisplay(chart) {
-    if (chart === "heat") {
-        displayHeat.value = true;
-        displayPrecip.value = false;
-    }
-
-    if (chart === "precip") {
-        displayPrecip.value = true;
-        displayHeat.value = false;
-    }
-}
 </script>
 
 <template>
     <div class="chart-table-container chart-view">
         <nav>
             <button
-                @click="updateChartDisplay('heat')"
-                @keyup.enter="updateChartDisplay('heat')"
-                :class="{ selected: displayHeat }"
+                @click="store.updateChartDisplay('heat')"
+                @keyup.enter="store.updateChartDisplay('heat')"
+                :class="{ selected: store.displayHeat }"
                 class="bevan-regular"
             >
                 Heat
             </button>
             <button
-                @click="updateChartDisplay('precip')"
-                @keyup.enter="updateChartDisplay('precip')"
-                :class="{ selected: displayPrecip }"
+                @click="store.updateChartDisplay('precip')"
+                @keyup.enter="store.updateChartDisplay('precip')"
+                :class="{ selected: store.displayPrecip }"
                 class="bevan-regular"
             >
                 Precipitation
@@ -282,20 +266,20 @@ function updateChartDisplay(chart) {
         <div class="chart-table">
             <div class="chart-table-desc">
                 <h3
-                    v-show="displayHeat"
+                    v-show="store.displayHeat"
                     class="bevan-regular"
                 >
                     Days above 90&deg; F
                 </h3>
                 <h3
-                    v-show="displayPrecip"
+                    v-show="store.displayPrecip"
                     class="bevan-regular"
                 >
                     Precipitation in inches
                 </h3>
             </div>
-            <canvas id="calif-temps-chart" v-show="displayHeat"></canvas>
-            <canvas id="calif-precip-chart" v-show="displayPrecip"></canvas>
+            <canvas id="calif-temps-chart" v-show="store.displayHeat"></canvas>
+            <canvas id="calif-precip-chart" v-show="store.displayPrecip"></canvas>
             <div class="chart-table-caption roboto-flex three">Data from the National Oceanic and Atmospheric Administration (NOAA)</div>
         </div>
     </div>

@@ -1,39 +1,24 @@
 <script setup>
-import { weatherData } from "../composables/store.js";
-import { ref } from "vue";
+import { store } from "../composables/store.js";
+import { weatherData } from "../data/weather-data.js";
 
-const displayHeat = ref(true);
-const displayPrecip = ref(false);
-
-// Updates which table is displayed when user clicks tab.
-function updateTableDisplay(table) {
-    if (table === "heat") {
-        displayHeat.value = true;
-        displayPrecip.value = false;
-    }
-
-    if (table === "precip") {
-        displayPrecip.value = true;
-        displayHeat.value = false;
-    }
-}
 </script>
 
 <template>
     <div class="chart-table-container table-view">
         <nav>
             <button
-                @click="updateTableDisplay('heat')"
-                @keyup.enter="updateTableDisplay('heat')"
-                :class="{ selected: displayHeat }"
+                @click="store.updateChartDisplay('heat')"
+                @keyup.enter="store.updateChartDisplay('heat')"
+                :class="{ selected: store.displayHeat }"
                 class="bevan-regular"
             >
                 Heat
             </button>
             <button
-                @click="updateTableDisplay('precip')"
-                @keyup.enter="updateTableDisplay('precip')"
-                :class="{ selected: displayPrecip }"
+                @click="store.updateChartDisplay('precip')"
+                @keyup.enter="store.updateChartDisplay('precip')"
+                :class="{ selected: store.displayPrecip }"
                 class="bevan-regular"
             >
                 Precipitation
@@ -43,20 +28,20 @@ function updateTableDisplay(table) {
         <div class="chart-table">
             <div class="chart-table-desc">
                 <h3
-                    v-show="displayHeat"
+                    v-show="store.displayHeat"
                     class="bevan-regular"
                 >
                     Days above 90&deg; F
                 </h3>
                 <h3
-                    v-show="displayPrecip"
+                    v-show="store.displayPrecip"
                     class="bevan-regular"
                 >
                     Precipitation in inches
                 </h3>
             </div>
 
-            <table v-if="displayHeat">
+            <table v-if="store.displayHeat">
                 <th>
                     <td class="roboto-serif six">Year</td>
                     <td class="roboto-serif six">SanDg</td>
@@ -71,7 +56,7 @@ function updateTableDisplay(table) {
                 </tr>
             </table>
 
-            <table v-if="displayHeat">
+            <table v-if="store.displayHeat">
                 <th>
                     <td class="roboto-serif six">Year</td>
                     <td class="roboto-serif six">Fresno</td>
@@ -86,7 +71,7 @@ function updateTableDisplay(table) {
                 </tr>
             </table>
 
-            <table v-if="displayPrecip">
+            <table v-if="store.displayPrecip">
                 <th>
                     <td class="roboto-serif six">Year</td>
                     <td class="roboto-serif six">SanDg</td>
@@ -101,7 +86,7 @@ function updateTableDisplay(table) {
                 </tr>
             </table>
 
-            <table v-if="displayPrecip">
+            <table v-if="store.displayPrecip">
                 <th>
                     <td class="roboto-serif six">Year</td>
                     <td class="roboto-serif six">Fresno</td>
