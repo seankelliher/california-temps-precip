@@ -24,7 +24,7 @@ Originally, I built this app to fetch data from NOAA using the agency’s API. B
 * Heat chart
 ![screen shot of project](/screenshots/california-temps-precip-screenshot4.png?s=600)
 
-* On smaller screens, the charts becomes unreadable and are replaced by tables.
+* On smaller screens, the charts becomes unreadable and are replaced by tables
 ![screen shot of project](/screenshots/california-temps-precip-screenshot5.png?s=600)
 
 ## Installation and Setup Instructions
