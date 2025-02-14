@@ -24,6 +24,9 @@ Originally, I built this app to fetch data from NOAA using the agency’s API. B
 * Heat chart
 ![screen shot of project](/screenshots/california-temps-precip-screenshot4.png?s=600)
 
+* On smaller screens, the charts becomes unreadable and are replaced by tables.
+![screen shot of project](/screenshots/california-temps-precip-screenshot5.png?s=600)
+
 ## Installation and Setup Instructions
 
 Clone down this repository. You will need `node` and `npm` installed globally on your machine. 
@@ -50,6 +53,7 @@ Visit the localhost port displayed in the terminal after running `npm run dev`.
 * Helpful Chart.js example, by diggidydoge on [Codepen](https://codepen.io/diggitydoge/pen/MWWmgJp?__cf_chl_captcha_tk__=0p_9xAp805KWSEbmYe2FWoI8MrlpQUN_VncDcE8VenI-1637378794-0-gaNycGzNB30).
 * Readme guidance from [Brenna Martenson](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4).
 * Linting guidance from [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io).
+* Design guidance from [ColorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3).
 * Design guidance from Google's [Material Design](https://material.io/design).
 * Fonts from [Google Fonts](https://fonts.google.com).
 * Fluid typography guidance from [Utopia](https://utopia.fyi).
