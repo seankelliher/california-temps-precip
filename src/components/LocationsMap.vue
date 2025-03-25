@@ -55,8 +55,8 @@
         </figure>
 
         <div class="text">
-            <h2 class="bevan-regular">Charts</h2>
-            <p class="roboto-serif four">The charts below display some of the stations' data. The "heat" chart displays the number of days with maximum temperature greater than 90 degrees Fahrenheit. The "precipitation" chart displays the annual precipitation in inches.</p>
+            <h2 class="bevan-regular">Data</h2>
+            <p class="roboto-serif four">"Heat" displays the number of days with a maximum temperature greater than 90 degrees Fahrenheit. "Precipitation" displays the annual precipitation in inches.</p>
         </div>
     </section>
 </template>
