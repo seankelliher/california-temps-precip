@@ -305,17 +305,18 @@ table {
     margin-bottom: 2em;
     padding: 0;
     flex: initial;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start; /* main axis */
-    align-items: flex-start; /* cross axis */
 }
 
-th, tr {
+thead, tbody {
     width: 100%;
     margin: 0;
     padding: 0;
-    flex: initial;
+}
+
+tr {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between; /* main axis */
