@@ -25,5 +25,5 @@ dist-ssr
 *.sw?
 
 # Linting
-.eslintrc.json
+eslint.config.js
 .stylelintrc.json
